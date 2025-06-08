@@ -3,25 +3,57 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #020202;
+  --red: #ff4533;
+  /* --foreground: #171717; */
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
-  color: var(--foreground);
+  color: white;
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+h1 {
+  font-size: clamp(48px, 6.5vw + 1rem, 88px);
+  line-height: clamp(56px, 7.5vw + 1rem, 100px);
+  font-weight: 600;
+  color: white;
+  max-width: 50%;
+  padding-inline: 0.5rem;
+}
+
+h2 {
+  font-size: clamp(40px, 5vw + 1rem, 65px);
+  line-height: clamp(48px, 6vw + 1rem, 76px);
+  color: var(--red);
+  font-weight: 600;
+  padding-inline: 0.5rem;
+}
+
+.main-p {
+  font-size: clamp(16px, 2vw, 22px);
+  line-height: clamp(24px, 3vw, 32px);
+}
+
+.para-16 {
+  font-size: clamp(16px, 2vw, 16px);
+  line-height: clamp(24px, 3vw, 24px);
+}
+
+.navLinks {
+  @apply pl-4 border-l border-transparent hover:border-red transition-all duration-150 ease-out ;
 }
