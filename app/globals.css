@@ -65,3 +65,8 @@ h3 {
 .navLinks {
   @apply pl-2 border-l-2 border-transparent hover:border-red transition-all duration-150 ease-out ;
 }
+
+.black-gradient-color {
+  background-image: linear-gradient(to top, #000000 30%, transparent);
+  /* opacity: 0.5; */
+}

@@ -46,6 +46,7 @@ const Navbar:React.FC = () => {
                         alt='LinkedIn'
                         width={20}
                         height={20}
+                        className='2xl:w-6 2xl:h-6 '
                         />
                     </Link>
                     <Link href={`#`} className='navLinks -ml-2'>
@@ -54,6 +55,7 @@ const Navbar:React.FC = () => {
                         alt='GitHub'
                         width={20}
                         height={20}
+                        className='2xl:w-6 2xl:h-6'
                         />
                     </Link>
                     <Button>

@@ -6,12 +6,12 @@ import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
 
 import arrow from '@/public/icons/arrow.svg'
-import aquaArc from '@/public/images/projects/1.jpg'
-import coffique from '@/public/images/projects/1.jpg'
-import legend from '@/public/images/projects/1.jpg'
-import mapdxb from '@/public/images/projects/1.jpg'
-import palmJebelAli from '@/public/images/projects/1.jpg'
-import spaceMortgage from '@/public/images/projects/1.jpg'
+import aquaArc from '@/public/images/projects/GoAi.png'
+import coffique from '@/public/images/projects/spaceMortgage1.png'
+import legend from '@/public/images/projects/skiable.png'
+import mapdxb from '@/public/images/projects/legend-mobile.png'
+import palmJebelAli from '@/public/images/projects/GoAi.png'
+import spaceMortgage from '@/public/images/projects/GoAi.png'
 import Button from './ui/Button'
 
 const ProjectsHighlight = () => {
@@ -99,15 +99,15 @@ const ProjectsHighlight = () => {
                 <div className='relative w-4/5 h-[80vh]'>
                     <div ref={sliderRef} className='keen-slider w-full h-full'>
                         {projects.map((project) => (
-                            <div key={project.id} className='keen-slider__slide !w-1/4 !h-full relative z-50 group transition-all duration-500 ease-in-out hover:!scale-y-95 !origin-top '>
+                            <div key={project.id} className='keen-slider__slide !w-1/4 !h-full relative z-50 group transition-all duration-500 ease-in-out hover:!-translate-y-10'>
                                 <Image 
                                 src={project.imageSrc}
                                 alt={project.title}
                                 fill
                                 quality={100}
-                                className='object-cover object-center'
+                                className='object-cover object-top'
                                 />
-                                <div className='absolute top-0 left-0 z-10 group-hover:z-0 w-full h-full bg-black/80 group-hover:bg-black/20 transition-all duration-300 ease-in-out'></div>
+                                <div className='absolute top-0 left-0 z-10 w-full h-full black-gradient-color  '></div>
                                 <div className='absolute bottom-20 left-1/2 -translate-x-1/2 w-4/5 z-10'>
                                     <p className='text-[#808080] group-hover:text-white text-sm italic max-w-52 '>
                                         {project.describtion}
