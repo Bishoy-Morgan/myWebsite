@@ -44,6 +44,14 @@ h2 {
   padding-inline: 0.5rem;
 }
 
+h3 {
+  font-size: clamp(28px, 3vw + 1rem, 40px);
+  line-height: clamp(36px, 4vw + 1rem, 52px);
+  color: white;
+  font-weight: 600;
+  padding-inline: 0.5rem;
+}
+
 .main-p {
   font-size: clamp(16px, 2vw, 22px);
   line-height: clamp(24px, 3vw, 32px);
@@ -55,5 +63,5 @@ h2 {
 }
 
 .navLinks {
-  @apply pl-4 border-l border-transparent hover:border-red transition-all duration-150 ease-out ;
+  @apply pl-2 border-l-2 border-transparent hover:border-red transition-all duration-150 ease-out ;
 }

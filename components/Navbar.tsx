@@ -34,12 +34,12 @@ const Navbar:React.FC = () => {
                     </Link >
                     <Link 
                     href={`/projects`} 
-                    className="navLinks pr-4" 
+                    className="navLinks pr-2" 
                     >
                         Projects
                     </Link >
                 </ul>
-                <div className='w-1/4 flex items-center justify-between pr-4'>
+                <div className='w-1/4 flex items-center justify-between pr-2'>
                     <Link href={`#`} className='navLinks'>
                         <Image 
                         src={linkedin}
@@ -48,7 +48,7 @@ const Navbar:React.FC = () => {
                         height={20}
                         />
                     </Link>
-                    <Link href={`#`} className='navLinks -ml-4'>
+                    <Link href={`#`} className='navLinks -ml-2'>
                         <Image 
                         src={github}
                         alt='GitHub'

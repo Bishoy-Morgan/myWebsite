@@ -6,7 +6,7 @@ const BehindTheScreen:React.FC = () => {
         <section className='w-full flex justify-center py-16'>
             <div className='w-4/5 flex  '>
                 <div className='w-1/2'>
-                    <h2 className='border-r-2 border-red py-8'>
+                    <h2 className=' py-8'>
                         Behind the screen
                     </h2>
                     <p className='main-p text-paleWhite pt-6 px-2'>

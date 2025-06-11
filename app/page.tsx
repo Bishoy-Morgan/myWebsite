@@ -1,4 +1,6 @@
 import BehindTheScreen from "@/components/BehindTheScreen";
+import CTA from "@/components/CTA";
+import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import Navbar from "@/components/Navbar";
 import ProjectsHighlight from "@/components/ProjectsHighlight";
@@ -14,6 +16,8 @@ export default function Home() {
         <HeroSection />
         <BehindTheScreen />
         <ProjectsHighlight />
+        <CTA />
+        <Footer />
       </main>
     </div>
   );
