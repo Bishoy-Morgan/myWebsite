@@ -20,10 +20,10 @@ const config: Config = {
         center: true,
         padding: "0",
         screens: {
-          DEFAULT: "100%", // small and medium screens
-          lg: "80%",       // large and extra large screens
+          DEFAULT: "100%", 
+          lg: "80%",   
           xl: "80%",
-          "2xl": "1920px", // max width at 2xl
+          "2xl": "1920px", 
         },
       },
       maxWidth: {

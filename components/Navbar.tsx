@@ -1,5 +1,7 @@
+'use client'
+
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Button from './ui/Button'
 import Image from 'next/image'
 import github from '@/public/icons/github.svg'
@@ -7,8 +9,18 @@ import linkedin from '@/public/icons/linkedin.svg'
 import morganLogo from '@/public/images/M.png'
 
 const Navbar:React.FC = () => {
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 0);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <div className='w-full flex justify-start  '>
+        <div className={`fixed top-0 left-0 z-50 w-full flex justify-start ${scrolled ? 'backdrop-blur-sm' : ''}`}>
             <div className='w-[10%] flex items-start justify-center '>
                 <Image 
                 src={morganLogo}
@@ -18,7 +30,7 @@ const Navbar:React.FC = () => {
                 objectFit='cover'
                 />
             </div>
-            <nav className='w-4/5 mx-auto pt-10 pb-24 flex items-center justify-between '>
+            <nav className='w-4/5 mx-auto flex items-center justify-between '>
                 <ul className='w-1/4 flex items-center justify-between text-sm '>
                     <Link 
                     href={`/`} 
