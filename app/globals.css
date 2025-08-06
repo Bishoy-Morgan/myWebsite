@@ -77,3 +77,14 @@ h3 {
   background-image: linear-gradient(to top, #000000 30%, transparent);
   /* opacity: 0.5; */
 }
+
+.no-scrollbar {
+  overflow: auto;
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+

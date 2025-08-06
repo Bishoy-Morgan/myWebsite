@@ -2,9 +2,9 @@
 
 import HeroSection from "@/components/HeroSection";
 import BehindTheScreen from "@/components/BehindTheScreen";
-import ProjectsHighlight from "@/components/ProjectsHighlight";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import Projects from "@/components/Projects";
 
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
       <main className="relative w-full z-10">
         <HeroSection />
         <BehindTheScreen />
-        <ProjectsHighlight />
+        <Projects />
         <CTA />
         <Footer />
       </main>

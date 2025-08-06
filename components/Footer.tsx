@@ -21,7 +21,7 @@ const Footer = () => {
                         Copyright &copy; 2025 Bishoy Morgan, All Rights Reserved
                     </span>
                 </div>
-                <div className='w-1/2 flex justify-center items-start '>
+                {/* <div className='w-1/2 flex justify-center items-start '>
                     <Image 
                     src={m}
                     alt='Morgan Logo'
@@ -29,7 +29,7 @@ const Footer = () => {
                     height={80}
                     className=''
                     />
-                </div>
+                </div> */}
                 <div className='w-1/4 py-16  flex flex-col justify-between '>
                     <div className='flex items-center justify-start space-x-4'>
                         <Link href={`#`} className='navLinks ' >

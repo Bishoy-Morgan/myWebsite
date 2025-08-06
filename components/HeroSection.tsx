@@ -4,7 +4,7 @@ import Button from './ui/Button'
 
 const HeroSection = () => {
     return (
-        <main className='relative w-full h-dvh flex justify-center '>
+        <main className='relative w-full h-dvh max-h-[1080px] flex justify-center '>
             <section className='w-4/5 flex '>
                 <div className='w-1/2 pt-[15%] '>
                     <h1>
