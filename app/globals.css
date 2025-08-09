@@ -78,7 +78,12 @@ h3 {
   /* opacity: 0.5; */
 }
 
-.no-scrollbar {
+input, textarea {
+  @apply w-full placeholder:text-[#eeeeee80] placeholder:text-sm placeholder:tracking-wider mt-2 mb-4 bg-transparent border-l focus:border-l-4 border-red px-3 py-2 focus:outline-none focus:ring-1 focus:ring-red transition-all duration-300 ease-in-out;
+
+}
+
+/* .no-scrollbar {
   overflow: auto;
   scrollbar-width: none; 
   -ms-overflow-style: none; 
@@ -86,5 +91,5 @@ h3 {
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
-}
+} */
 

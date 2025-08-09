@@ -12,7 +12,7 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         white: "#ffffff",
-        paleWhite: "#e1e1e1",
+        paleWhite: "#EEEEEE",
         red: "#ff4533",
         darkRed: "#ff220e",
       },

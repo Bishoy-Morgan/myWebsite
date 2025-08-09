@@ -1,5 +1,5 @@
-import Beams from '@/public/models/Beams'
 import React from 'react'
+import Beams from '@/public/models/Beams'
 import Button from './ui/Button'
 
 const HeroSection = () => {
@@ -16,8 +16,9 @@ const HeroSection = () => {
                         </p>
                     </div>
                     <a 
-                    href="https://cal.com/bishoy-morgan/30min?overlayCalendar=true" 
-                    // target="_blank"
+                    href="https://cal.com/bishoy-morgan" 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     >
                         <Button>Book a Free Discovery Call</Button>
                     </a>
