@@ -117,7 +117,7 @@ export interface TextTrailProps {
 }
 
 const TextTrail: React.FC<TextTrailProps> = ({
-  text = "Vibe",
+  text = "Blogsy",
   fontFamily = "Figtree",
   fontWeight = "900",
   noiseFactor = 1,
@@ -127,7 +127,7 @@ const TextTrail: React.FC<TextTrailProps> = ({
   animateColor = false,
   startColor = "#ffffff",
   textColor = "#ffffff",
-  backgroundColor = "#020202",
+  backgroundColor = "transparent",
   colorCycleInterval = 3000,
   supersample = 2,
 }) => {
@@ -145,13 +145,20 @@ const TextTrail: React.FC<TextTrailProps> = ({
   ]);
 
   useEffect(() => {
+    // Add null check to prevent the error
     if (!ref.current) return;
 
+    // Capture ref.current in a variable to use in cleanup
+    const containerElement = ref.current;
+
     const size = () => ({
-      w: ref.current!.clientWidth,
-      h: ref.current!.clientHeight,
+      w: containerElement.clientWidth,
+      h: containerElement.clientHeight,
     });
     let { w, h } = size();
+
+    // Add additional safety check for dimensions
+    if (w === 0 || h === 0) return;
 
     const renderer = new WebGLRenderer({ 
       antialias: true, 
@@ -162,7 +169,7 @@ const TextTrail: React.FC<TextTrailProps> = ({
     renderer.setClearColor(new Color('#020202'), 0);
     renderer.setPixelRatio(window.devicePixelRatio || 1);
     renderer.setSize(w, h);
-    ref.current.appendChild(renderer.domElement);
+    containerElement.appendChild(renderer.domElement);
     renderer.domElement.classList.add('w-full', 'h-full', 'bg-[#020202]', 'block');
 
     const scene = new Scene();
@@ -264,14 +271,16 @@ const TextTrail: React.FC<TextTrailProps> = ({
     const mouse = [0, 0],
       target = [0, 0];
     const onMove = (e: PointerEvent) => {
-      const r = ref.current!.getBoundingClientRect();
+      const r = containerElement.getBoundingClientRect();
       target[0] = ((e.clientX - r.left) / r.width) * 2 - 1;
       target[1] = ((r.top + r.height - e.clientY) / r.height) * 2 - 1;
     };
-    ref.current.addEventListener("pointermove", onMove);
+    containerElement.addEventListener("pointermove", onMove);
 
     const ro = new ResizeObserver(() => {
       ({ w, h } = size());
+      if (w === 0 || h === 0) return; // Add dimension check
+      
       renderer.setSize(w, h);
       cam.left = -w / 2;
       cam.right = w / 2;
@@ -285,7 +294,7 @@ const TextTrail: React.FC<TextTrailProps> = ({
       label.geometry.dispose();
       label.geometry = new PlaneGeometry(Math.min(w, h), Math.min(w, h));
     });
-    ro.observe(ref.current);
+    ro.observe(containerElement);
 
     const timer = setInterval(() => {
       if (!textColor) {
@@ -323,9 +332,11 @@ const TextTrail: React.FC<TextTrailProps> = ({
     return () => {
       renderer.setAnimationLoop(null);
       clearInterval(timer);
-      ref.current?.removeEventListener("pointermove", onMove);
+      containerElement.removeEventListener("pointermove", onMove);
       ro.disconnect();
-      ref.current?.removeChild(renderer.domElement);
+      if (renderer.domElement.parentNode) {
+        containerElement.removeChild(renderer.domElement);
+      }
       renderer.dispose();
       rt0.dispose();
       rt1.dispose();

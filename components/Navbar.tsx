@@ -42,7 +42,7 @@ const Navbar:React.FC = () => {
                     </Link >
                 </ul>
                 <div className='w-1/4 flex items-center justify-between pr-2'>
-                    <Link href={`#`} className='navLinks'>
+                    <a href={`https://www.linkedin.com/in/bishoy-morgan-ba979a310`} target='_blank' className='navLinks'>
                         <Image 
                         src={linkedin}
                         alt='LinkedIn'
@@ -50,8 +50,8 @@ const Navbar:React.FC = () => {
                         height={20}
                         className='2xl:w-6 2xl:h-6 '
                         />
-                    </Link>
-                    <Link href={`#`} className='navLinks -ml-2'>
+                    </a>
+                    <a href={`https://github.com/Bishoy-Morgan`} target='_blank' className='navLinks -ml-2'>
                         <Image 
                         src={github}
                         alt='GitHub'
@@ -59,7 +59,7 @@ const Navbar:React.FC = () => {
                         height={20}
                         className='2xl:w-6 2xl:h-6'
                         />
-                    </Link>
+                    </a>
                     <Button>
                         Direct Contact
                     </Button>

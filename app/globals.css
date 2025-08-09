@@ -35,7 +35,7 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(40px, 5vw + 1rem, 65px);
+  font-size: clamp(50px, 5.7vw + 1rem, 72px);
   line-height: clamp(48px, 6vw + 1rem, 76px);
   color: var(--red);
   font-weight: 600;
