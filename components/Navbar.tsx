@@ -14,13 +14,12 @@ const Navbar:React.FC = () => {
 
     return (
         <>
-            <div className={`absolute top-0 left-0 z-50 w-full flex justify-start `}>
-                <div className='w-[10%] flex items-start justify-center '>
+            <div className={`absolute top-0 left-0 z-50 w-full h-[15%] flex justify-start `}>
+                <div className='relative w-[10%] h-full flex items-center justify-center '>
                     <Image 
                     src={morganLogo}
                     alt='Morgan Logo'
-                    width={135}
-                    height={180}
+                    fill
                     objectFit='cover'
                     />
                 </div>
@@ -52,7 +51,7 @@ const Navbar:React.FC = () => {
                             alt='LinkedIn'
                             width={20}
                             height={20}
-                            className='2xl:w-6 2xl:h-6 '
+                            className='icon-vw '
                             />
                         </a>
                         <a href={`https://github.com/Bishoy-Morgan`} target='_blank' className='navLinks -ml-2'>
@@ -61,7 +60,7 @@ const Navbar:React.FC = () => {
                             alt='GitHub'
                             width={20}
                             height={20}
-                            className='2xl:w-6 2xl:h-6'
+                            className='icon-vw'
                             />
                         </a>
                         <Button onClick={() => setContactOpen(true)}>

@@ -111,6 +111,12 @@ const HeroProjects: React.FC<HeroProjectsProps> = ({ project }) => {
             >
                 {/* Left Column */}
                 <motion.div className="w-1/2" custom={0} variants={fadeUp}>
+                    <motion.h4 className="text-red px-2 tracking-widest" custom={2} variants={fadeUp}>
+                        {project.role}
+                    </motion.h4>
+                    <motion.h3 className="mb-8 text-white px-2 tracking-tighter" custom={2} variants={fadeUp}>
+                        {project.year}
+                    </motion.h3>
                     <motion.p
                         className="main-p text-paleWhite pr-4 py-6 px-2"
                         custom={1}

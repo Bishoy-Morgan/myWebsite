@@ -12,48 +12,55 @@ body {
   background: var(--background);
 }
 
-@layer utilities {
+/* @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-}
+} */
 
 h1 {
-  font-size: clamp(48px, 6.5vw + 1rem, 88px);
-  line-height: clamp(56px, 7.5vw + 1rem, 100px);
+  font-size: clamp(1.5vw, 6.5vw, 5vw);
+  line-height: clamp(2vw, 7.5vw, 6vw);
   font-weight: 600;
   color: white;
   padding-inline: 0.5rem;
 }
 
 h2 {
-  font-size: clamp(50px, 5.7vw + 1rem, 72px);
-  line-height: clamp(48px, 6vw + 1rem, 76px);
+  font-size: clamp(1.6vw, 5.7vw, 4.5vw);
+  line-height: clamp(1.8vw, 6vw, 4.8vw);
   color: var(--red);
   font-weight: 600;
   padding-inline: 0.5rem;
 }
 
 h3 {
-  font-size: clamp(28px, 3vw + 1rem, 40px);
-  line-height: clamp(36px, 4vw + 1rem, 52px);
+  font-size: clamp(1vw, 3vw, 2.5vw);
+  line-height: clamp(1.2vw, 4vw, 3vw);
   color: white;
   font-weight: 600;
   padding-inline: 0.5rem;
 }
 
 .main-p {
-  font-size: clamp(16px, 2vw, 22px);
-  line-height: clamp(24px, 3vw, 32px);
+  font-size: clamp(0.5vw, 2vw, 1.5vw);
+  line-height: clamp(0.8vw, 3vw, 2vw);
 }
 
 .para-16 {
-  font-size: clamp(16px, 2vw, 16px);
-  line-height: clamp(24px, 3vw, 24px);
+  font-size: clamp(0.5vw, 2vw, 1vw);
+  line-height: clamp(0.8vw, 3vw, 1.5vw);
 }
 
 .navLinks {
-  @apply pl-2 border-l-2 border-transparent hover:border-red transition-all duration-150 ease-out ;
+  @apply pl-2 border-l-2 border-transparent hover:border-red transition-all duration-150 ease-out;
+  font-size: clamp(0.8vw, 1vw, 1.8vw);
+  line-height: clamp(1vw, 1.25vw, 2vw);
+}
+
+.icon-vw {
+  width: clamp(1vw, 1.5vw, 2.5vw);
+  height: clamp(1vw, 1.5vw, 2.5vw);
 }
 
 .black-gradient::after {

@@ -4,9 +4,9 @@ import Button from './ui/Button'
 
 const HeroSection = () => {
     return (
-        <main className='relative w-full h-dvh max-h-[1080px] flex justify-center '>
+        <main className='relative w-full h-dvh min-h-screen max-h-[1080px] flex justify-center '>
             <section className='w-4/5 flex '>
-                <div className='w-1/2 pt-[15%] '>
+                <div className='w-1/2 pt-[15%]'>
                     <h1>
                         Quiet design Loud results
                     </h1>
@@ -20,7 +20,7 @@ const HeroSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     >
-                        <Button>Book a Free Discovery Call</Button>
+                        <Button className=' '>Book a Free Discovery Call</Button>
                     </a>
                 </div>
                 <div className='black-gradient relative w-1/2 px-1 h-full '>
