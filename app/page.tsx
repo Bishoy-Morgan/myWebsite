@@ -9,7 +9,7 @@ import Projects from "@/components/Projects";
 
 export default function Home() {
   return (
-      <main className="relative w-full z-10">
+      <main className="relative w-full">
         <HeroSection />
         <BehindTheScreen />
         <Projects />
