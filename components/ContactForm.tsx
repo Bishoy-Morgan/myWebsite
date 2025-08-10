@@ -14,7 +14,6 @@ import closeIcon from '@/public/icons/close.svg'
 
     const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || ''
     const NOTIFICATION_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_NOTIFICATION_TEMPLATE_ID || ''
-    const AUTO_REPLY_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_AUTO_REPLY_TEMPLATE_ID || ''
     const USER_ID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID || ''
 
 
@@ -44,11 +43,6 @@ const ContactForm: React.FC<Props> = ({ isOpen, onClose }) => {
             from_name: name,
             from_email: email,
             message: message,
-        }, USER_ID)
-
-        await emailjs.send(SERVICE_ID, AUTO_REPLY_TEMPLATE_ID, {
-            to_name: name,
-            to_email: email,
         }, USER_ID)
 
         setStatus('success')
@@ -81,7 +75,7 @@ const ContactForm: React.FC<Props> = ({ isOpen, onClose }) => {
                 onClick={onClose}
                 >
                     <motion.div
-                        className="bg-black shadow-lg shadow-[#1a1a1a] max-w-md w-full p-10 relative"
+                        className="bg-background shadow-lg shadow-[#1a1a1a] max-w-md w-full p-10 relative "
                         variants={modalVariants}
                         initial="hidden"
                         animate="visible"
@@ -91,7 +85,7 @@ const ContactForm: React.FC<Props> = ({ isOpen, onClose }) => {
                         <button
                         onClick={onClose}
                         aria-label="Close popup"
-                        className='rounded-full bg-transparent hover:bg-red p-1'
+                        className="absolute top-4 right-4 rounded-full bg-transparent hover:bg-red p-1"
                         >
                             <Image 
                             src={closeIcon}
@@ -101,9 +95,9 @@ const ContactForm: React.FC<Props> = ({ isOpen, onClose }) => {
                             />
                         </button>
 
-                        <h2 className="text-2xl font-semibold mb-4 text-center">Direct Contact</h2>
+                        <h3 className="font-semibold my-4 text-center">Direct Contact</h3>
 
-                        <form onSubmit={handleSubmit} className="space-y-4">
+                        <form onSubmit={handleSubmit} className="space-y-4 ">
                             {status === 'success' && (
                                 <p className="text-green-600 text-sm text-center mt-2">Message sent successfully!</p>
                             )}
@@ -146,7 +140,7 @@ const ContactForm: React.FC<Props> = ({ isOpen, onClose }) => {
                             <Button
                                 type="submit"
                                 disabled={status === 'sending'}
-                                className='w-full ml-0'
+                                className='w-full !ml-0 '
                             >
                                 {status === 'sending' ? 'Sending...' : 'Send Message'}
                             </Button>

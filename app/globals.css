@@ -5,15 +5,7 @@
 :root {
   --background: #020202;
   --red: #ff4533;
-  /* --foreground: #171717; */
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
 
 body {
   color: white;
@@ -79,7 +71,7 @@ h3 {
 }
 
 input, textarea {
-  @apply w-full placeholder:text-[#eeeeee80] placeholder:text-sm placeholder:tracking-wider mt-2 mb-4 bg-transparent border-l focus:border-l-4 border-red px-3 py-2 focus:outline-none focus:ring-1 focus:ring-red transition-all duration-300 ease-in-out;
+  @apply w-full placeholder:text-[#eeeeee80] placeholder:text-sm placeholder:tracking-wider mt-2 mb-4 bg-transparent border-l focus:border-l-4 border-red px-3 py-2 focus:outline-none focus:ring-1 focus:ring-red transition-all duration-100 ease-in-out;
 
 }
 
