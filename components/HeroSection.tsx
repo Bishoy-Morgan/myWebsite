@@ -20,7 +20,7 @@ const HeroSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     >
-                        <Button className=' '>Book a Free Discovery Call</Button>
+                        <Button bgColor="#ff220e">Book a Free Discovery Call</Button>
                     </a>
                 </div>
                 <div className='black-gradient relative w-1/2 px-1 h-full '>

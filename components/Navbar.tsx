@@ -37,14 +37,21 @@ const Navbar:React.FC = () => {
                         >
                             About
                         </Link >
-                        <Link 
-                        href={`/projects`} 
-                        className="navLinks pr-2" 
+                        <a
+                        href="#projects"
+                        className="navLinks pr-2"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            const element = document.getElementById('projects');
+                            if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        }}
                         >
                             Projects
-                        </Link >
+                        </a>
                     </ul>
-                    <div className='w-1/4 flex items-center justify-between pr-2'>
+                    <div className='w-1/3 flex items-center justify-between pr-2'>
                         <a href={`https://www.linkedin.com/in/bishoy-morgan-ba979a310`} target='_blank' className='navLinks'>
                             <Image 
                             src={linkedin}
@@ -63,7 +70,10 @@ const Navbar:React.FC = () => {
                             className='icon-vw'
                             />
                         </a>
-                        <Button onClick={() => setContactOpen(true)}>
+                        <Button 
+                        onClick={() => setContactOpen(true)}
+                        bgColor="#ff220e"
+                        >
                             Direct Contact
                         </Button>
                     </div>

@@ -17,6 +17,7 @@ import spaceMortgageDesktop from '@/public/images/projects/spaceMortgage-desktop
 import spaceMortgageMobile from '@/public/images/projects/spaceMortgage-mobile.png'
 
 import TextTrail from './ui/TextTrail'
+import RedLines from './ui/RedLines'
 
 const projects = [
   {
@@ -65,7 +66,7 @@ const Projects: React.FC = () => {
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([])
 
   return (
-    <section className="relative w-full py-10">
+    <section id="projects" className="relative w-full py-10">
       <div className="relative space-y-16 flex flex-col items-center justify-center">
         {projects.map((project, index) => (
           <div
@@ -75,9 +76,7 @@ const Projects: React.FC = () => {
             }}
             className="relative w-4/5 min-h-screen flex justify-between items-end"
           >
-            <div className="absolute top-0 right-0 w-1/4 h-10 border-r border-red" />
-            <div className="absolute bottom-1/2 left-0 w-1/4 h-16 border-l border-red" />
-            <div className="absolute top-0 right-1/2 w-1/4 h-28 border-r border-red" />
+            <RedLines lines={['topRight', 'middleLeft', 'topRightHalf']} />
 
             {/* Project Title */}
             <motion.div

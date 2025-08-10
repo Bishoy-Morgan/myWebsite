@@ -7,6 +7,10 @@
   --red: #ff4533;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: white;
   background: var(--background);

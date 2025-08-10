@@ -2,15 +2,24 @@
 
 import React from "react";
 import { motion, HTMLMotionProps } from "framer-motion";
-import Image from "next/image";
-import arrow from '@/public/icons/long-arrow.svg'
+import Image, { StaticImageData } from "next/image";
+import defaultArrow from '@/public/icons/long-arrow.svg'
 
 type ButtonProps = Omit<
     React.ButtonHTMLAttributes<HTMLButtonElement> & HTMLMotionProps<"button">,
     "onDrag" | "onDragStart" | "onDragEnd" | "onDragEnter" | "onDragExit" | "onDragLeave" | "onDragOver" | "onDrag"
->;
+> & {
+    bgColor?: string;
+    arrowIcon?: StaticImageData; 
+};
 
-const Button: React.FC<ButtonProps> = ({ children, className = "", ...props }) => {
+const Button: React.FC<ButtonProps> = ({ 
+    children, 
+    className = "", 
+    bgColor, 
+    arrowIcon = defaultArrow,
+    ...props 
+}) => {
     return (
         <motion.button
         initial="rest"
@@ -40,7 +49,7 @@ const Button: React.FC<ButtonProps> = ({ children, className = "", ...props }) =
             transition={{ duration: 1, ease: 'easeInOut' }}
             >
                 <Image 
-                    src={arrow}
+                    src={arrowIcon}
                     alt="Arrow"
                     style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
@@ -53,7 +62,7 @@ const Button: React.FC<ButtonProps> = ({ children, className = "", ...props }) =
                         width: '3vw',
                         height: '3vw',
                         borderRadius: "50%",
-                        backgroundColor: "#ff220e",
+                        backgroundColor: bgColor,
                         left: 0,
                         top: "50%",
                         translateY: "-50%",
@@ -67,7 +76,7 @@ const Button: React.FC<ButtonProps> = ({ children, className = "", ...props }) =
                         right: 0,
                         top: 0,
                         translateY: "0%",
-                        backgroundColor: "#ff220e",
+                        backgroundColor: bgColor,
                         position: "absolute",
                         transition: { duration: 0.4, ease: "easeInOut" },
                     },
