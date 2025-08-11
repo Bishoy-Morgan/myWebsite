@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 const AboutHeroSection = () => {
     return (
-        <main className='w-full mx-auto '>
+        <main className='w-4/5 mx-auto pt-[10%]'>
             {/* Heading */}
             <motion.h1
                 className="text-center mb-16 "

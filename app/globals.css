@@ -52,12 +52,13 @@ h3 {
 }
 
 .secondary-p {
-  font-size: clamp(1.125vw, 1.5vw, 1.5vw)
+  font-size: clamp(0.8vw, 1.3vw, 1.5vw);
+  line-height: clamp(1vw, 2vw, 2.2vw);
 }
 
-.para-16 {
-  font-size: clamp(0.5vw, 2vw, 1vw);
-  line-height: clamp(0.8vw, 3vw, 1.5vw);
+.para-sm {
+    font-size: clamp(0.5vw, 2vw, 1vw);
+    line-height: clamp(0.8vw, 3vw, 1.5vw);
 }
 
 .navLinks {
