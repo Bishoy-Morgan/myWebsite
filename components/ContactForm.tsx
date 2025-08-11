@@ -75,7 +75,7 @@ const ContactForm: React.FC<Props> = ({ isOpen, onClose }) => {
                 onClick={onClose}
                 >
                     <motion.div
-                        className="bg-background shadow-lg shadow-[#1a1a1a] max-w-md w-full p-10 relative "
+                        className="bg-background shadow-lg shadow-[#1a1a1a] w-1/3 max-w-lg p-10 relative "
                         variants={modalVariants}
                         initial="hidden"
                         animate="visible"
@@ -140,7 +140,8 @@ const ContactForm: React.FC<Props> = ({ isOpen, onClose }) => {
                             <Button
                                 type="submit"
                                 disabled={status === 'sending'}
-                                className='w-full !ml-0 '
+                                className='mx-auto !ml-0 '
+                                bgColor='#ff220e'
                             >
                                 {status === 'sending' ? 'Sending...' : 'Send Message'}
                             </Button>

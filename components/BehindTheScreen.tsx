@@ -42,7 +42,7 @@ const BehindTheScreen: React.FC = () => {
 
                 {/* Paragraph */}
                 <motion.p
-                className="main-p text-paleWhite text-center px-0"
+                className="main-p text-paleWhite text-center mb-16"
                 variants={{
                     hidden: { opacity: 0, y: 20 },
                     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
