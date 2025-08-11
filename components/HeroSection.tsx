@@ -1,29 +1,30 @@
-import React, { useRef, useState } from 'react'
+// import React, { useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import Beams from '@/public/models/Beams'
 import Button from './ui/Button'
-import Image from 'next/image'
-import celebrate from '@/public/icons/celebrate.svg'
+import dynamic from "next/dynamic";
+// import Image from 'next/image'
+// import celebrate from '@/public/icons/celebrate.svg'
 
+const Beams = dynamic(() => import("@/public/models/Beams"), { ssr: false });
 
 const HeroSection = () => {
-    const imgRef = useRef<HTMLDivElement | null>(null)
-    const [circleStart, setCircleStart] = useState<{ x: number; y: number } | null>(null)
-    const [showRedOverlay, setShowRedOverlay] = useState(false)
+    // const imgRef = useRef<HTMLDivElement | null>(null)
+    // const [circleStart, setCircleStart] = useState<{ x: number; y: number } | null>(null)
+    // const [showRedOverlay, setShowRedOverlay] = useState(false)
 
-    const handleImageClick = () => {
-        if (imgRef.current) {
-            const rect = imgRef.current.getBoundingClientRect()
-            setCircleStart({
-                x: rect.left + rect.width / 2,
-                y: rect.top + rect.height / 2
-            })
-        }
-    }
+    // const handleImageClick = () => {
+    //     if (imgRef.current) {
+    //         const rect = imgRef.current.getBoundingClientRect()
+    //         setCircleStart({
+    //             x: rect.left + rect.width / 2,
+    //             y: rect.top + rect.height / 2
+    //         })
+    //     }
+    // }
 
     return (
         <main className='relative w-full h-dvh min-h-screen max-h-[1080px] flex justify-center'>
-            <div className='group'>
+            {/* <div className='group'>
                 <div
                     ref={imgRef}
                     className='fixed bottom-[5%] right-[3%] w-[4%] h-[8%]'
@@ -38,10 +39,10 @@ const HeroSection = () => {
                 <span className='group-hover:block fixed bottom-[25%] -right-[0.5%] rotate-90 font-bold tracking-widest text-white/20 main-p opacity-0 transition-all group-hover:opacity-100 duration-500 ease-in-out'>
                     Don&apos;t Touch
                 </span>
-            </div>
+            </div> */}
 
             {/* Rocket */}
-            {circleStart && (
+            {/* {circleStart && (
                 <motion.div
                     initial={{ x: circleStart.x, y: circleStart.y }}
                     animate={{ y: -50, opacity: 0 }}
@@ -62,10 +63,10 @@ const HeroSection = () => {
                         setShowRedOverlay(true)
                     }}
                 />
-            )}
+            )} */}
 
             {/* Red overlay reveal */}
-            {showRedOverlay && (
+            {/* {showRedOverlay && (
                 <motion.div
                     initial={{
                         width: 150,
@@ -107,26 +108,32 @@ const HeroSection = () => {
                         
                     }}
                 />
-            )}
+            )} */}
 
             <section className='w-4/5 flex'>
-                <div className='w-1/2 pt-[15%]'>
-                    <h1>
-                        Quiet design Loud results
-                    </h1>
-                    <div className='w-full flex justify-start'>
-                        <p className='main-p text-paleWhite py-10 px-2'>
-                            I&apos;m a front-end developer who believes the best work speaks softly but leaves a strong impression.<br />I specialize in performance first websites and multilingual experiences, built to be fast, intuitive, and scalable. I don&apos;t chase trends. I deliver results that last.
+                <motion.div
+                    className="w-1/2 pt-[15%]"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 1.5, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                >
+                    <h1>Quiet design Loud results</h1>
+                    <div className="w-full flex justify-start">
+                        <p className="main-p text-paleWhite py-10 px-2">
+                            I&apos;m a front-end developer who believes the best work speaks softly but leaves a strong impression.<br />
+                            I specialize in performance first websites and multilingual experiences, built to be fast, intuitive, and scalable.
+                            I don&apos;t chase trends. I deliver results that last.
                         </p>
                     </div>
                     <a
-                        href="https://cal.com/bishoy-morgan"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    href="https://cal.com/bishoy-morgan"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     >
                         <Button bgColor="#ff220e">Book a Free Discovery Call</Button>
                     </a>
-                </div>
+                </motion.div>
                 <div className='black-gradient relative w-1/2 px-1 h-full'>
                     <Beams
                         beamWidth={0.3}

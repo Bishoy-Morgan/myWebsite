@@ -51,6 +51,10 @@ h3 {
   line-height: clamp(0.8vw, 3vw, 2vw);
 }
 
+.secondary-p {
+  font-size: clamp(1.125vw, 1.5vw, 1.5vw)
+}
+
 .para-16 {
   font-size: clamp(0.5vw, 2vw, 1vw);
   line-height: clamp(0.8vw, 3vw, 1.5vw);
