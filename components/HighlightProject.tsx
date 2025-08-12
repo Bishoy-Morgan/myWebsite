@@ -5,35 +5,37 @@ import Image from 'next/image'
 import blogsyDesktop from '@/public/images/projects/blogsy-desktop.png'
 import blogsyMobile from '@/public/images/projects/blogsy-mockup.png'
 import Button from './ui/Button'
+import { useTranslations } from 'next-intl'
 // import blogsyMobile from '@/public/images/projects/blogsy-mobile.png'
-
-const currentProject = [
-  {
-    id: 1,
-    name: 'Blogsy',
-    description: 'Blogsy is a sleek, user-friendly blogging platform designed with the latest web technologies to deliver fast and seamless performance.',
-    desktopImage: blogsyDesktop,
-    mobileImage: blogsyMobile,
-  }
-]
 
 
 const HighlightProject = () => {
+  const t =useTranslations("HighlightProject")
+  const currentProject = [
+    {
+      id: 1,
+      desktopImage: blogsyDesktop,
+      mobileImage: blogsyMobile,
+    }
+  ]
+
   return (
     <section className="w-4/5 mx-auto pt-20 flex flex-col items-center  ">
-      <h2 className="mb-20 ">In Development</h2>
+      <h2 className="mb-20 ">
+        {t("title")}
+      </h2>
       {currentProject.map((project) => (
         <div key={project.id} className="relative w-full flex flex-col items-center justify-center gap-y-6 px-2">
           <div className="w-1/2 flex flex-col text-center items-center justify-center">
             <h2 className="font-bold shiny-text mb-8">
-              {project.name}
+              {t("currentProject-name")}
             </h2>
             <p className="mb-8 secondary-p text-paleWhite/80">
-              {project.description}
+              {t("currentProject-des")}
             </p>
             <Link href="/work">
               <Button bgColor='#ff220e'>
-                See All Work
+                {t("buttonA")}
               </Button>
             </Link>
           </div>
@@ -48,12 +50,12 @@ const HighlightProject = () => {
             >
               <a href="https://blogsy-ceod.onrender.com" target='_blank'>
                 <h1 className='text-red tracking-[-0.5rem] hover:scale-125 transition-transform duration-300 ease-out '>
-                  Visit Website
+                  {t("visitWebsite")}
                 </h1>
               </a>
               <Link href={`/projects/${project.id}`}>
                 <Button bgColor='#ff4533' className='!text-black '>
-                  Check Project Details
+                  {t("buttonB")}
                 </Button>
               </Link>
             </div>
@@ -61,7 +63,7 @@ const HighlightProject = () => {
             <div className="relative w-[95%] h-full">
               <Image
                 src={project.desktopImage}
-                alt={`${project.name} Desktop`}
+                alt={`Blogsy Desktop Image`}
                 fill
                 quality={100}
                 priority
@@ -73,7 +75,7 @@ const HighlightProject = () => {
             <div className="absolute right-0 bottom-[2.5%] w-[18%] z-20 rounded-[2.5rem] shadow-3xl ">
               <Image
                 src={project.mobileImage}
-                alt={`${project.name} Mobile`}
+                alt={`Blogsy Mobile Image`}
                 width={0.46 * 2556}
                 height={2556}
                 quality={100}

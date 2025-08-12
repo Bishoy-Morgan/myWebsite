@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Button from './ui/Button'
 import Image from 'next/image'
 import closeIcon from '@/public/icons/close.svg'
+import { useTranslations } from 'next-intl'
 
     type Props = {
         isOpen: boolean
@@ -29,6 +30,7 @@ import closeIcon from '@/public/icons/close.svg'
     }
 
 const ContactForm: React.FC<Props> = ({ isOpen, onClose }) => {
+    const t = useTranslations("ContactForm")
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
@@ -89,51 +91,57 @@ const ContactForm: React.FC<Props> = ({ isOpen, onClose }) => {
                         >
                             <Image 
                             src={closeIcon}
-                            alt=''
+                            alt='Close button'
                             width={24}
                             height={24}
                             />
                         </button>
 
-                        <h3 className="font-semibold my-4 text-center">Direct Contact</h3>
+                        <h3 className="font-semibold my-4 text-center">
+                            {t("title")}
+                        </h3>
 
                         <form onSubmit={handleSubmit} className="space-y-4 ">
                             {status === 'success' && (
-                                <p className="text-green-600 text-sm text-center mt-2">Message sent successfully!</p>
+                                <p className="text-green-600 text-sm text-center mt-2">
+                                    {t("successMsg")}
+                                </p>
                             )}
                             {status === 'error' && (
-                                <p className="text-darkRed text-sm text-center mt-2">Failed to send message. Try again.</p>
+                                <p className="text-darkRed text-sm text-center mt-2">
+                                    {t("failedMsg")}
+                                </p>
                             )}
                             <label className="block">
-                                <span className="text-white font-medium">Name</span>
+                                <span className="text-white font-medium">{t("name")}</span>
                                 <input
                                 type="text"
                                 required
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
-                                placeholder="Your name"
+                                placeholder={t("namePlaceholder")}
                                 />
                             </label>
 
                             <label className="block">
-                                <span className="text-white font-medium">Email</span>
+                                <span className="text-white font-medium">{t("email")}</span>
                                 <input
                                 type="email"
                                 required
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                placeholder="Your email"
+                                placeholder={t("emailPlaceholder")}
                                 />
                             </label>
 
                             <label className="block">
-                                <span className="text-white font-medium">Message</span>
+                                <span className="text-white font-medium">{t("message")}</span>
                                 <textarea
                                 required
                                 rows={4}
                                 value={message}
                                 onChange={(e) => setMessage(e.target.value)}
-                                placeholder="Your message goes here, I&rsquo;m all ears!"
+                                placeholder={t("messagePlaceholder")}
                                 />
                             </label>
 
@@ -143,7 +151,7 @@ const ContactForm: React.FC<Props> = ({ isOpen, onClose }) => {
                                 className='mx-auto !ml-0 '
                                 bgColor='#ff220e'
                             >
-                                {status === 'sending' ? 'Sending...' : 'Send Message'}
+                                {status === 'sending' ? t('sending') : t('sendMessage')}
                             </Button>
                         </form>
                     </motion.div>

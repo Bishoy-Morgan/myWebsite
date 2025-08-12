@@ -9,8 +9,10 @@ import github from '@/public/icons/github.svg'
 import linkedin from '@/public/icons/linkedin.svg'
 import morganLogo from '@/public/images/MRGN.png'
 import ContactForm from './ContactForm'
+import { useTranslations } from 'next-intl'
 
 const Navbar: React.FC = () => {
+    const t = useTranslations("Navbar")
     const [isContactOpen, setContactOpen] = useState(false)
     const pathname = usePathname()
 
@@ -22,7 +24,9 @@ const Navbar: React.FC = () => {
                         src={morganLogo}
                         alt='Morgan Logo'
                         fill
-                        objectFit='contain'
+                        priority
+                        sizes="(max-width: 768px) 40vw, 20vw"
+                        className='object-contain'
                     />
                 </div>
                 <nav className='w-4/5 mx-auto flex items-center justify-between '>
@@ -31,19 +35,19 @@ const Navbar: React.FC = () => {
                             href={`/`} 
                             className={`navLinks ${pathname === '/' ? '!border-red' : ''}`}
                         >
-                            Home
+                            {t("home")}
                         </Link>
                         <Link 
                             href={`/about`}
                             className={`navLinks ${pathname === '/about' ? '!border-red' : ''}`}
                         >
-                            About
+                            {t("about")}
                         </Link>
                         <Link 
                             href={`/work`}
                             className={`navLinks pr-2 ${pathname === '/work' ? '!border-red' : ''}`}
                         >
-                            Work
+                            {t("work")}
                         </Link>
                     </ul>
                     <div className='w-[31%] flex items-center justify-between pr-2'>
@@ -69,7 +73,7 @@ const Navbar: React.FC = () => {
                             onClick={() => setContactOpen(true)}
                             bgColor="#ff220e"
                         >
-                            Direct Contact
+                            {t("button")}
                         </Button>
                     </div>
                 </nav>

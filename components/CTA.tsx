@@ -4,6 +4,7 @@ import React, { useRef, useEffect } from "react";
 import Button from "./ui/Button";
 import redArrow from '@/public/icons/long-redArrow.svg'
 import { motion, useAnimation, useInView } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const containerVariant = {
     hidden: { opacity: 0, y: 20 },
@@ -16,6 +17,7 @@ const buttonHover = {
 };
 
 const CTA = () => {
+    const t = useTranslations("CTA")
     const ref = useRef(null);
     const inView = useInView(ref, { once: true, margin: "-100px" });
     const controls = useAnimation();
@@ -39,11 +41,12 @@ const CTA = () => {
                 animate={controls}
             >
                 <h3 className="text-white max-w-xl text-center">
-                    Let’s Build Something Amazing Together
+                    {t("title")}
                 </h3>
                 <p className="main-p mt-10 mb-16 text-center">
-                    Whether it’s a collaboration, full-time role, or freelance<br />
-                    I’d love to hear from you.
+                    {t("paragraphA")}
+                    <br />
+                    {t("paragraphB")}
                 </p>
                 <div className="flex items-center gap-x-4">
                     <motion.a
@@ -51,7 +54,7 @@ const CTA = () => {
                         whileHover={buttonHover}
                     >
                         <Button bgColor="#020202" arrowIcon={redArrow}>
-                        Email
+                            {t("email")}
                         </Button>
                     </motion.a>
 
@@ -62,7 +65,7 @@ const CTA = () => {
                         whileHover={buttonHover}
                     >
                         <Button bgColor="#020202" arrowIcon={redArrow}>
-                        WhatsApp
+                            {t("whatsApp")}
                         </Button>
                     </motion.a>
                 </div>

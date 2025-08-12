@@ -4,8 +4,10 @@ import { motion } from 'framer-motion'
 import RedLines from './ui/RedLines'
 import Button from './ui/Button'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 const BehindTheScreen: React.FC = () => {
+    const t = useTranslations("BehindTheScreen")
     return (
         <section className="relative w-4/5 mx-auto flex justify-center py-32">
             <RedLines lines={['topRight', 'middleRight', 'bottomLeft']} />
@@ -29,7 +31,7 @@ const BehindTheScreen: React.FC = () => {
                     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
                 }}
                 >
-                    Behind the screen
+                    {t("title")}
                 </motion.h2>
 
                 {/* Paragraph */}
@@ -40,11 +42,11 @@ const BehindTheScreen: React.FC = () => {
                     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
                 }}
                 >
-                    Think of me as your backstage crew<br />invisible to the crowd, <br />indispensable to the show.
+                    {t("paragraphA")}<br />{t("paragraphB")}<br />{t("paragraphC")}
                 </motion.p>
                 <Link href={`/about`}>
                     <Button bgColor="#ff220e">
-                        Backstage pass
+                        {t("button")}
                     </Button>
                 </Link>
             </motion.div>

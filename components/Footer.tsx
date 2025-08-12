@@ -6,8 +6,11 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import github from '@/public/icons/github.svg'
 import linkedin from '@/public/icons/linkedin.svg'
+import { useTranslations } from 'next-intl'
 
 const Footer = () => {
+    const t = useTranslations("Footer")
+    const s = useTranslations("Navbar")
     const pathname = usePathname()
 
     const handleHomeClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -32,17 +35,17 @@ const Footer = () => {
                             onClick={handleHomeClick} 
                             className='text-white/50 hover:text-white hover:translate-x-2 transition-all duration-150 ease-linear'
                         >
-                            Home
+                            {s("home")}
                         </Link>
                         <Link href={`/about`} className='text-white/50 hover:text-white hover:translate-x-2 transition-all duration-150 ease-linear'>
-                            About
+                            {s("about")}
                         </Link>
                         <Link href={`/work`} className='text-white/50 hover:text-white hover:translate-x-2 transition-all duration-150 ease-linear'>
-                            Work
+                            {s("work")}
                         </Link>
                     </ul>
                     <span className='block text-xs mt-20 text-white/50'>
-                        Copyright &copy; 2025 Bishoy Morgan, All Rights Reserved
+                        {t("copyRights")}
                     </span>
                 </div>
 
@@ -68,8 +71,12 @@ const Footer = () => {
                         </Link>
                     </div>
                     <div className='px-2 flex justify-between text-xs mt-20 text-white/50'>
-                        <Link href={`/privacy-policy`} className='para-sm hover:text-white transition-all ease-in-out duration-300'>Privacy Policy</Link>
-                        <span className='para-sm'>Cookie-free Website</span>
+                        <Link href={`/privacy-policy`} className='para-sm hover:text-white transition-all ease-in-out duration-300'>
+                            {t("privacyPolicy")}
+                        </Link>
+                        <span className='para-sm'>
+                            {t("cookie")}
+                        </span>
                     </div>
                 </div>
             </div>
