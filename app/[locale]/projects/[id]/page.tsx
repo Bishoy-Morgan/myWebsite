@@ -1,9 +1,9 @@
 'use client'
 
 import { useParams } from 'next/navigation'
-import HeroProjects from '@/app/projects/components/HeroProjects'
+import HeroProjects from '@/app/[locale]/projects/components/HeroProjects'
 import Footer from '@/components/Footer'
-import { projectsData } from '@/app/data/projectsData'
+import { projectsData } from '@/app/[locale]/data/projectsData'
 
 export default function ProjectsPage() {
     const params = useParams()
