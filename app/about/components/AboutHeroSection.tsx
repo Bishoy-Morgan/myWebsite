@@ -31,8 +31,8 @@ const AboutHeroSection = () => {
                         Looks like you’re curious about who’s running the show behind the screen
                     </span>
                     <h4 
-                    className="text-red mt-4 mb-6"
-                    style={{ fontSize: 'clamp(1vw, 1.5vw, 1.5vw)' }}
+                    className="text-white font-bold tracking-tighter mt-4 mb-6"
+                    style={{ fontSize: 'clamp(1vw, 2vw, 2vw)' }}
                     >
                         let me introduce myself
                     </h4>

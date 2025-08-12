@@ -1,17 +1,26 @@
+'use client'
+
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import github from '@/public/icons/github.svg'
 import linkedin from '@/public/icons/linkedin.svg'
 
 const Footer = () => {
-    const scrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    };
+    const pathname = usePathname()
+
+    const handleHomeClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        // If already on home page, scroll to top
+        if (pathname === '/') {
+            e.preventDefault()
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+        }
+        // Otherwise, default Link behavior will navigate to home
+    }
 
     return (
         <footer className='w-full flex justify-center py-16'>
@@ -19,8 +28,8 @@ const Footer = () => {
                 <div className='w-1/4 py-16 px-2'>
                     <ul className='flex flex-col space-y-8'>
                         <Link 
-                            href="/" 
-                            onClick={scrollToTop} 
+                            href={`/`} 
+                            onClick={handleHomeClick} 
                             className='text-white/50 hover:text-white hover:translate-x-2 transition-all duration-150 ease-linear'
                         >
                             Home

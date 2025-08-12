@@ -45,19 +45,6 @@ const Navbar: React.FC = () => {
                         >
                             Work
                         </Link>
-                        {/* <a
-                            href="#projects"
-                            className="navLinks pr-2"
-                            onClick={(e) => {
-                                e.preventDefault();
-                                const element = document.getElementById('projects');
-                                if (element) {
-                                    element.scrollIntoView({ behavior: 'smooth' });
-                                }
-                            }}
-                        >
-                            Projects
-                        </a> */}
                     </ul>
                     <div className='w-[31%] flex items-center justify-between pr-2'>
                         <a href={`https://www.linkedin.com/in/bishoy-morgan-ba979a310`} target='_blank' className='navLinks'>

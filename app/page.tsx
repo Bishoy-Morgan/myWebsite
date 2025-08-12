@@ -1,5 +1,3 @@
-'use client'
-
 import HeroSection from "@/components/HeroSection";
 import BehindTheScreen from "@/components/BehindTheScreen";
 import CTA from "@/components/CTA";

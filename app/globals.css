@@ -129,3 +129,11 @@ input, textarea {
   display: none;
 }
 
+@keyframes countdown {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}

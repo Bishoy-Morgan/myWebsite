@@ -43,7 +43,7 @@ const WorkHero = () => {
 
   return (
     <section className="relative w-4/5 mx-auto pb-24 pt-[10%] flex flex-col items-center">
-      <RedLines lines={['bottomLeft', 'middleRight', 'middleTopRight', 'middleTopLeft']} />
+      <RedLines lines={['bottomLeft', 'middleTopRight', 'middleTopLeft']} />
       <motion.h1
         className="mb-6 max-w-[50%] text-center"
         variants={itemVariants}
