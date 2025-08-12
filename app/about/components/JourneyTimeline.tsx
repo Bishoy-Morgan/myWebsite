@@ -2,6 +2,7 @@
 
 import { useRef, useEffect } from 'react'
 import { motion, useAnimation, useInView } from 'framer-motion'
+import RedLines from '@/components/ui/RedLines'
 
 interface Milestone {
   season: string
@@ -115,7 +116,8 @@ export default function JourneyTimeline() {
   ]
 
   return (
-    <section className="w-4/5 h-[1248px] 2xl:h-[1448px] mx-auto py-20 relative flex justify-center">
+    <section className="relaive w-4/5 h-[1248px] 2xl:h-[1448px] mx-auto py-20 relative flex justify-center">
+      <RedLines lines={['bottomRight', 'middleLeft']}/>
       <div className="relative w-1/2 h-full flex justify-center">
         {/* Timeline Line */}
         <div className="relative w-[1px] bg-red overflow-hidden">

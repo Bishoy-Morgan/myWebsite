@@ -5,7 +5,7 @@ import RedLines from '@/components/ui/RedLines'
 const AboutHeroSection = () => {
     return (
         <main className='relative w-4/5 mx-auto pt-[10%]'>
-            <RedLines lines={['bottomLeft', 'middleRight', 'middleTopRight', 'bottomRight']} />
+            <RedLines lines={['middleLeft', 'middleTopRight', 'bottomRight']} />
             {/* Heading */}
             <motion.h1
                 className="text-center mb-16 "
