@@ -1,6 +1,6 @@
 import React from 'react'
 
-type LinePosition = "topRight" | "middleLeft" | "topRightHalf" | "middleRight" | "bottomLeft";
+type LinePosition = "topRight" | "middleLeft" | "topRightHalf" | "middleRight" | "bottomLeft" | "middleTopRight" | "middleTopLeft" | "bottomRight";
 
 type RedLinesProps = {
     lines: LinePosition[]
@@ -28,6 +28,18 @@ const lineStyles: Record<string, { className: string; style?: React.CSSPropertie
         className: 'bottom-[22%] left-0 w-1/4 border-l border-red',
         style: { height: '30%' },
     },
+    bottomRight: {
+        className: 'bottom-[2%] right-0 w-1/4 border-r border-red',
+        style: { height: '13%' },
+    },
+    middleTopRight: {
+        className: 'top-[12%] right-0 w-1/4 border-r border-red',
+        style: { height: '8%' },
+    },
+    middleTopLeft: {
+        className: 'top-[16%] left-0 w-1/4 border-r border-red',
+        style: { height: '4%' },
+    },
 }
 
 
@@ -40,7 +52,7 @@ const RedLines: React.FC<RedLinesProps> = ({ lines, className = '' }) => {
                 return (
                     <div
                         key={pos}
-                        className={`absolute ${lineClass} ${className}`}
+                        className={`absolute -z-10 ${lineClass} ${className} `}
                         style={style}
                     />
                 )

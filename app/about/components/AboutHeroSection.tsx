@@ -1,9 +1,11 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import RedLines from '@/components/ui/RedLines'
 
 const AboutHeroSection = () => {
     return (
-        <main className='w-4/5 mx-auto pt-[10%]'>
+        <main className='relative w-4/5 mx-auto pt-[10%]'>
+            <RedLines lines={['bottomLeft', 'middleRight', 'middleTopRight', 'bottomRight']} />
             {/* Heading */}
             <motion.h1
                 className="text-center mb-16 "

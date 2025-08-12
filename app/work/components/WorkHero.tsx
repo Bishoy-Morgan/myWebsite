@@ -8,6 +8,7 @@ import blogsyDesktop from '@/public/images/projects/blogsy-desktop.png'
 import legendDesktop from '@/public/images/projects/legend-desktop.png'
 import skiableDesktop from '@/public/images/projects/skiable-desktop.png'
 import spaceMortgageDesktop from '@/public/images/projects/spaceMortgage-desktop.png'
+import RedLines from '@/components/ui/RedLines'
 
 const projects = [
   { id: 1, name: 'Blogsy', image: blogsyDesktop },
@@ -41,7 +42,8 @@ const WorkHero = () => {
   const cardGap = -230
 
   return (
-    <section className="w-4/5 mx-auto pb-24 pt-[10%] flex flex-col items-center">
+    <section className="relative w-4/5 mx-auto pb-24 pt-[10%] flex flex-col items-center">
+      <RedLines lines={['bottomLeft', 'middleRight', 'middleTopRight', 'middleTopLeft']} />
       <motion.h1
         className="mb-6 max-w-[50%] text-center"
         variants={itemVariants}
@@ -72,7 +74,7 @@ const WorkHero = () => {
           return (
             <div
               key={project.id}
-              className="relative shadow-xl cursor-pointer rounded-sm transition-transform duration-500 ease-in-out"
+              className="relative rounded-sm transition-transform duration-500 ease-in-out"
               style={{
                 width: '28vw', 
                 aspectRatio: '5 / 3.5', 

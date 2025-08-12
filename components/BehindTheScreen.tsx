@@ -8,15 +8,7 @@ import Link from 'next/link'
 const BehindTheScreen: React.FC = () => {
     return (
         <section className="relative w-4/5 mx-auto flex justify-center py-32">
-            {/* Animated Red Lines */}
-            <motion.div
-                initial={{ opacity: 0, y: -20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: 'easeOut' }}
-                viewport={{ once: true }}
-            >
-                <RedLines lines={['topRight', 'middleRight', 'bottomLeft']} />
-            </motion.div>
+            <RedLines lines={['topRight', 'middleRight', 'bottomLeft']} />
 
             {/* Content */}
             <motion.div
@@ -31,7 +23,7 @@ const BehindTheScreen: React.FC = () => {
             >
                 {/* Heading */}
                 <motion.h2
-                className="text-center px-0 py-8 uppercase"
+                className="text-center px-0 py-8 "
                 variants={{
                     hidden: { opacity: 0, y: 30 },
                     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
