@@ -39,7 +39,13 @@ const Navbar: React.FC = () => {
                         >
                             About
                         </Link>
-                        <a
+                        <Link 
+                            href={`/work`}
+                            className={`navLinks pr-2 ${pathname === '/work' ? '!border-red' : ''}`}
+                        >
+                            Work
+                        </Link>
+                        {/* <a
                             href="#projects"
                             className="navLinks pr-2"
                             onClick={(e) => {
@@ -51,7 +57,7 @@ const Navbar: React.FC = () => {
                             }}
                         >
                             Projects
-                        </a>
+                        </a> */}
                     </ul>
                     <div className='w-[31%] flex items-center justify-between pr-2'>
                         <a href={`https://www.linkedin.com/in/bishoy-morgan-ba979a310`} target='_blank' className='navLinks'>

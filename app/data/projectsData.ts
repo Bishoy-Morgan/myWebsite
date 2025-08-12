@@ -22,7 +22,7 @@ export const projectsData = [
             Blogsy is built to scale, making it suitable for individual bloggers and professional publishing.`,
         link: 'https://blogsy-ceod.onrender.com',
         image: [blogsyMobile, blogsyDesktop],
-        technologies: ['React.js', 'Next.js', 'Tailwind CSS', 'Node.js', 'MongoDB', 'Vercel'],
+        technologies: ['Flask', 'Python', 'Bootstrap', 'HTML5', 'Sqlite', 'Render'],
         role: 'Frontend & Backend Development',
         year: 2023,
     },
