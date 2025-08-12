@@ -3,7 +3,6 @@ import BehindTheScreen from "@/components/BehindTheScreen";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import HighlightProject from "@/components/HighlightProject";
-// import Projects from "@/components/Projects";
 
 
 export default function Home() {
@@ -12,7 +11,6 @@ export default function Home() {
         <HeroSection />
         <BehindTheScreen />
         <HighlightProject />
-        {/* <Projects /> */}
         <CTA />
         <Footer />
       </main>

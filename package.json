@@ -19,6 +19,7 @@
     "keen-slider": "^6.8.6",
     "maath": "^0.10.8",
     "next": "14.2.29",
+    "next-intl": "^4.3.4",
     "react": "^18",
     "react-dom": "^18",
     "sharp": "^0.34.2",

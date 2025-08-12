@@ -1,16 +1,18 @@
 'use client'
 
 // import React, { useRef, useState } from 'react'
+// import Image from 'next/image'
+// import celebrate from '@/public/icons/celebrate.svg'
+import { Suspense } from 'react';
 import { motion } from 'framer-motion'
 import Button from './ui/Button'
 import dynamic from "next/dynamic";
-import { Suspense } from 'react';
-// import Image from 'next/image'
-// import celebrate from '@/public/icons/celebrate.svg'
+import { useTranslations } from 'next-intl';
 
 const Beams = dynamic(() => import("@/public/models/Beams"), { ssr: false });
 
 const HeroSection = () => {
+    const t = useTranslations("HeroSection")
     // const imgRef = useRef<HTMLDivElement | null>(null)
     // const [circleStart, setCircleStart] = useState<{ x: number; y: number } | null>(null)
     // const [showRedOverlay, setShowRedOverlay] = useState(false)
@@ -121,12 +123,14 @@ const HeroSection = () => {
                     transition={{ duration: 1.5, ease: "easeOut" }}
                     viewport={{ once: true }}
                 >
-                    <h1>Quiet design Loud results</h1>
+                    <h1>
+                        {t("title")}
+                    </h1>
                     <div className="w-full flex justify-start">
                         <p className="main-p text-paleWhite py-10 px-2">
-                            I&apos;m a front-end developer who believes the best work speaks softly but leaves a strong impression.<br />
-                            I specialize in performance first websites and multilingual experiences, built to be fast, intuitive, and scalable.
-                            I don&apos;t chase trends. I deliver results that last.
+                            {t("paragraphA")}
+                            <br />
+                            {t("paragraphB")}
                         </p>
                     </div>
                     <a
@@ -134,7 +138,9 @@ const HeroSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     >
-                        <Button bgColor="#ff220e">Book a Free Discovery Call</Button>
+                        <Button bgColor="#ff220e">
+                            {t("button")}
+                        </Button>
                     </a>
                 </motion.div>
                 <div className='black-gradient relative w-1/2 px-1 h-full'>
