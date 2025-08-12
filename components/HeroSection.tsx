@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion'
 import Button from './ui/Button'
 import dynamic from "next/dynamic";
+import { Suspense } from 'react';
 // import Image from 'next/image'
 // import celebrate from '@/public/icons/celebrate.svg'
 
@@ -135,7 +136,8 @@ const HeroSection = () => {
                     </a>
                 </motion.div>
                 <div className='black-gradient relative w-1/2 px-1 h-full'>
-                    <Beams
+                    <Suspense>
+                        <Beams
                         beamWidth={0.3}
                         beamHeight={25}
                         beamNumber={25}
@@ -144,7 +146,8 @@ const HeroSection = () => {
                         noiseIntensity={0.85}
                         scale={0.2}
                         rotation={180}
-                    />
+                        />
+                    </Suspense>
                 </div>
             </section>
         </main>

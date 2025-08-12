@@ -47,7 +47,7 @@ const HighlightProject = () => {
             className='absolute top-0 left-0 w-full h-full opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-all duration-300 ease-in-out flex flex-col items-center justify-center gap-y-10 z-30 '
             >
               <a href="https://blogsy-ceod.onrender.com" target='_blank'>
-                <h1 className='text-red tracking-[-0.5rem] hover:scale-110 transition-transform duration-200 ease-out '>
+                <h1 className='text-red tracking-[-0.5rem] hover:scale-125 transition-transform duration-300 ease-out '>
                   Visit Website
                 </h1>
               </a>

@@ -1,11 +1,11 @@
 import blogsyDesktop from '@/public/images/projects/blogsy-desktop.png'
-import blogsyMobile from '@/public/images/projects/blogsy-mobile.png'
+import blogsyMobile from '@/public/images/projects/blogsy-mockup1.png'
 import legendDesktop from '@/public/images/projects/legend-desktop.png'
-import legendMobile from '@/public/images/projects/legend-mobile.png'
+import legendMobile from '@/public/images/projects/legend-mockup.png'
 import skiableDesktop from '@/public/images/projects/skiable-desktop.png'
-import skiableMobile from '@/public/images/projects/skiable-mobile.png'
+import skiableMobile from '@/public/images/projects/skiable-mockup.png'
 import spaceMortgageDesktop from '@/public/images/projects/spaceMortgage-desktop.png'
-import spaceMortgageMobile from '@/public/images/projects/spaceMortgage-mobile.png'
+import spaceMortgageMobile from '@/public/images/projects/spaceMortgage-mockup.png'
 
 export const projectsData = [
     {

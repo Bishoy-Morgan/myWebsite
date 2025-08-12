@@ -41,8 +41,8 @@ const Footer = () => {
                         </Link>
                     </div>
                     <div className='px-2 flex justify-between text-xs mt-20 text-white/40 '>
-                        <Link href={`#`} className='text-sm hover:text-white transition-all ease-in-out duration-300'>Privacy Policy</Link>
-                        <span className='text-sm hover:text-white transition-all ease-in-out duration-300'>Cookie-free Website</span>
+                        <Link href={`/privacy-policy`} className='para-sm hover:text-white transition-all ease-in-out duration-300'>Privacy Policy</Link>
+                        <span className='para-sm '>Cookie-free Website</span>
                     </div>
                     
                 </div>

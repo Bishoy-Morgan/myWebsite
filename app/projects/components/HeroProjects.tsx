@@ -66,7 +66,7 @@ const HeroProjects: React.FC<HeroProjectsProps> = ({ project }) => {
                 custom={0}
                 variants={fadeUp}
                 >
-                    <motion.h1 className="mb-6" custom={1} variants={fadeUp}>
+                    <motion.h1 className="mb-6 tracking-tighter" custom={1} variants={fadeUp}>
                         {project.title}
                     </motion.h1>
                     <motion.p
@@ -78,7 +78,7 @@ const HeroProjects: React.FC<HeroProjectsProps> = ({ project }) => {
                     </motion.p>
 
                     <motion.a href={project.link} target='_blank' custom={3} variants={fadeUp}>
-                        <Button>
+                        <Button bgColor='#ff4533'>
                             Live Link
                         </Button>
                     </motion.a>
@@ -97,18 +97,19 @@ const HeroProjects: React.FC<HeroProjectsProps> = ({ project }) => {
                         fill
                         priority
                         quality={100}
-                        className="object-cover object-left-top"
+                        className="object-cover object-left-top rounded-sm"
                         />
                     </div>
                 </motion.div>
             </motion.section>
 
             <motion.section
-                className="w-4/5 h-dvh max-h-[1080px] flex items-center mb-24 mt-12"
+                className="relative w-4/5 h-dvh max-h-[1080px] flex items-center mb-24 mt-12"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
             >
+                <div className='absolute -top-[15%] right-0 w-1/4 h-[120%] border-l border-red '></div>
                 {/* Left Column */}
                 <motion.div className="w-1/2" custom={0} variants={fadeUp}>
                     <motion.h4 className="text-red px-2 tracking-widest" custom={2} variants={fadeUp}>
@@ -156,7 +157,7 @@ const HeroProjects: React.FC<HeroProjectsProps> = ({ project }) => {
                         fill
                         priority
                         quality={100}
-                        className="object-cover object-left-top"
+                        className="object-contain "
                         />
                     </div>
                 </motion.div>
