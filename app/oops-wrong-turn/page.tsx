@@ -55,7 +55,7 @@ export default function NotFound() {
 
     const handleSecretClick = () => {
         setShowSecret(true)
-        // setTimeout(() => router.push('/'), 5000)
+        setTimeout(() => router.push('/'), 5000)
     }
 
     return (
