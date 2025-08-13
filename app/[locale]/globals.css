@@ -4,7 +4,11 @@
 
 :root {
   --background: #020202;
+  --foreground: #ffffff;
+  --white: #ffffff;
+  --paleWhite: #EEEEEE;
   --red: #ff4533;
+  --darkRed: #ff220e;
 }
 
 html {
@@ -15,12 +19,6 @@ body {
   color: white;
   background: var(--background);
 }
-
-/* @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-} */
 
 h1 {
   font-size: clamp(1.5vw, 6.5vw, 5vw);
@@ -57,8 +55,8 @@ h3 {
 }
 
 .para-sm {
-    font-size: clamp(0.5vw, 2vw, 1vw);
-    line-height: clamp(0.8vw, 3vw, 1.5vw);
+  font-size: clamp(0.5vw, 2vw, 1vw);
+  line-height: clamp(0.8vw, 3vw, 1.5vw);
 }
 
 .navLinks {
@@ -83,16 +81,18 @@ h3 {
 
 .black-gradient-color {
   background-image: linear-gradient(to top, #000000 30%, transparent);
-  /* opacity: 0.5; */
 }
 
-input, textarea {
+input,
+textarea {
   @apply w-full placeholder:text-[#eeeeee80] placeholder:text-sm placeholder:tracking-wider mt-2 mb-4 bg-transparent border-l focus:border-l-4 border-red px-3 py-2 focus:outline-none focus:ring-1 focus:ring-red transition-all duration-100 ease-in-out;
-
 }
+
+
+  /* Shiny Text Animation */
 
 .shiny-text {
-  color: rgba(255, 250, 240, 0.5); /* Adjust this color to change intensity/style */
+  color: rgba(255, 250, 240, 0.5);
   background: linear-gradient(
     120deg,
     rgba(255, 255, 255, 0) 40%,
@@ -106,34 +106,135 @@ input, textarea {
   animation: shine 5s linear infinite;
 }
 
-@keyframes shine {
-  0% {
-    background-position: 100%;
-  }
-  100% {
-    background-position: -100%;
-  }
-}
-
 .shiny-text.disabled {
   animation: none;
 }
 
+@keyframes shine {
+  0% { background-position: 100%; }
+  100% { background-position: -100%; }
+}
+
 .no-scrollbar {
   overflow: auto;
-  scrollbar-width: none; 
-  -ms-overflow-style: none; 
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
+.circle-size {
+  --circle-size: 3vw;
+}
+
 @keyframes countdown {
-  0% {
+  0% { width: 100%; }
+  100% { width: 0%; }
+}
+
+@layer components {
+  .container {
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
   }
-  100% {
-    width: 0%;
+
+  @media (min-width: 1024px) {
+    .container { max-width: 80%; }
+  }
+
+  @media (min-width: 1280px) {
+    .container { max-width: 80%; }
+  }
+
+  @media (min-width: 1536px) {
+    .container { max-width: 1920px; }
+  }
+}
+
+@layer utilities {
+  /* Sizing */
+  .max-w-1920 { max-width: 1920px; }
+  .w-95 { width: 95%; }
+
+  /* Background Colors */
+  .bg-background { background-color: var(--background); }
+  .bg-foreground { background-color: var(--foreground); }
+  .bg-white { background-color: var(--white); }
+  .bg-paleWhite { background-color: var(--paleWhite); }
+  .bg-red { background-color: var(--red); }
+  .bg-darkRed { background-color: var(--darkRed); }
+
+  /* Text Colors */
+  .text-background { color: var(--background); }
+  .text-foreground { color: var(--foreground); }
+  .text-white { color: var(--white); }
+  .text-paleWhite { color: var(--paleWhite); }
+  .text-red { color: var(--red); }
+  .text-darkRed { color: var(--darkRed); }
+  .text-button { font-size: clamp(0.8vw, 1vw, 1.2vw); }
+
+  /* Borders */
+  .border-background { border-color: var(--background); }
+  .border-foreground { border-color: var(--foreground); }
+  .border-white { border-color: var(--white); }
+  .border-paleWhite { border-color: var(--paleWhite); }
+  .border-red { border-color: var(--red); }
+  .border-darkRed { border-color: var(--darkRed); }
+}
+
+
+  /* Mobile layout */
+@media (max-width: 431px) {
+  h1 {
+    font-size: clamp(14vw, 14.5vw, 14.5vw);
+    line-height: clamp(16vw, 16.5vw, 16.5vw);
+  }
+
+  h2 {
+    font-size: clamp(5vw, 5.7vw, 5.7vw);
+    line-height: clamp(5.5vw, 6vw, 6vw);
+  }
+
+  h3 {
+    font-size: clamp(2.8vw, 3vw, 3vw);
+    line-height: clamp(3.5vw, 4vw, 4vw);
+  }
+
+  .main-p {
+    font-size: clamp(4vw, 4.5vw, 5vw);
+    line-height: clamp(8vw, 8.3vw, 8.5vw);
+  }
+
+  .secondary-p {
+    font-size: clamp(1.1vw, 1.3vw, 1.3vw);
+    line-height: clamp(1.8vw, 2vw, 2vw);
+  }
+
+  .para-sm {
+    font-size: clamp(1.8vw, 2vw, 2vw);
+    line-height: clamp(2.8vw, 3vw, 3vw);
+  }
+
+  .navLinks {
+    font-size: clamp(5vw, 5.5vw, 6vw);
+    line-height: clamp(5vw, 5.25vw, 5.25vw);
+  }
+
+  .icon-vw {
+    width: clamp(10vw, 10.5vw, 11vw);
+    height: clamp(10vw, 10.5vw, 11vw);
+  }
+
+  .text-button {
+    font-size: clamp(5vw, 5.5vw, 6vw);
+  }
+
+  .circle-size {
+    --circle-size: 12vw; /* Bigger circle for mobile */
   }
 }

@@ -115,12 +115,12 @@ const HeroSection = () => {
                 />
             )} */}
 
-            <section className='w-4/5 flex'>
+            <section className='w-full md:w-4/5 h-full flex items-end md:items-center justify-center md:justify-start'>
                 <motion.div
-                    className="w-1/2 pt-[15%]"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 1.5, ease: "easeOut" }}
+                    className="w-95 md:w-1/2 h-4/5 flex flex-col items-start justify-center md:justify-end  "
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1, ease: "easeOut" }}
                     viewport={{ once: true }}
                 >
                     <h1>
@@ -143,7 +143,7 @@ const HeroSection = () => {
                         </Button>
                     </a>
                 </motion.div>
-                <div className='black-gradient relative w-1/2 px-1 h-full'>
+                <div className='black-gradient absolute top-0 left-0 w-full md:relative md:w-1/2 md:px-1 h-full -z-10 md:z-0 opacity-40 md:opacity-100'>
                     <Suspense>
                         <Beams
                         beamWidth={0.3}

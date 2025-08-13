@@ -43,7 +43,7 @@
         "email": "Email",
         "emailPlaceholder": "Your email",
         "message": "Message",
-        "messagePlaceholder": "Your message goes here, I&rsquo;m all ears!",
+        "messagePlaceholder": "Your message goes here, I'm all ears",
         "send": "Sending...",
         "sendMessage": "Send Message"
     },

@@ -151,7 +151,7 @@ const ContactForm: React.FC<Props> = ({ isOpen, onClose }) => {
                                 className='mx-auto !ml-0 '
                                 bgColor='#ff220e'
                             >
-                                {status === 'sending' ? t('sending') : t('sendMessage')}
+                                {status === 'sending' ? t('send') : t('sendMessage')}
                             </Button>
                         </form>
                     </motion.div>

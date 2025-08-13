@@ -25,7 +25,7 @@ const Button: React.FC<ButtonProps> = ({
         initial="rest"
         whileHover="hover"
         animate="rest"
-        className={`relative overflow-hidden text-white rounded-full ml-[0.5vw] px-[2vw] py-[.8vw] text-[clamp(0.8vw,1vw,1.2vw)] font-semibold flex items-center  ${className}`}
+        className={`relative overflow-hidden text-white rounded-full ml-[0.5vw] px-[2vw] py-[2vw] md:py-[.8vw] text-button font-semibold flex items-center  ${className}`}
         {...props}
         >
             {/* Text content stays on top */}
@@ -59,8 +59,8 @@ const Button: React.FC<ButtonProps> = ({
             <motion.div
                 variants={{
                     rest: {
-                        width: '3vw',
-                        height: '3vw',
+                        width: 'var(--circle-size)',
+                        height: 'var(--circle-size)',
                         borderRadius: "50%",
                         backgroundColor: bgColor,
                         left: 0,
@@ -81,7 +81,7 @@ const Button: React.FC<ButtonProps> = ({
                         transition: { duration: 0.4, ease: "easeInOut" },
                     },
                 }}
-                className="z-0"
+                className="z-0 circle-size"
             />
         </motion.button>
     );
