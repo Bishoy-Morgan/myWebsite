@@ -196,13 +196,13 @@ textarea {
   }
 
   h2 {
-    font-size: clamp(5vw, 5.7vw, 5.7vw);
-    line-height: clamp(5.5vw, 6vw, 6vw);
+    font-size: clamp(12vw, 12.5vw, 12.5vw);
+    line-height: clamp(14vw, 14.5vw, 14.5vw);
   }
 
   h3 {
-    font-size: clamp(2.8vw, 3vw, 3vw);
-    line-height: clamp(3.5vw, 4vw, 4vw);
+    font-size: clamp(10vw, 10.5vw, 10.5vw);
+    line-height: clamp(12vw, 12.5vw, 12.5vw);
   }
 
   .main-p {
@@ -211,13 +211,13 @@ textarea {
   }
 
   .secondary-p {
-    font-size: clamp(1.1vw, 1.3vw, 1.3vw);
-    line-height: clamp(1.8vw, 2vw, 2vw);
+    font-size: clamp(2.8vw, 3vw, 3vw);
+    line-height: clamp(5.6vw, 5.8vw, 6vw);
   }
 
   .para-sm {
-    font-size: clamp(1.8vw, 2vw, 2vw);
-    line-height: clamp(2.8vw, 3vw, 3vw);
+    font-size: clamp(2vw, 2.5vw, 3vw);
+    line-height: clamp(4vw, 4.5vw, 5vw);
   }
 
   .navLinks {

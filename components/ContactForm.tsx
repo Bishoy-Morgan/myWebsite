@@ -77,7 +77,7 @@ const ContactForm: React.FC<Props> = ({ isOpen, onClose }) => {
                 onClick={onClose}
                 >
                     <motion.div
-                        className="bg-background shadow-lg shadow-[#1a1a1a] w-1/3 max-w-lg p-10 relative "
+                        className="bg-background shadow-lg shadow-[#1a1a1a] w-95 md:w-1/3 max-w-lg p-10 relative "
                         variants={modalVariants}
                         initial="hidden"
                         animate="visible"
@@ -87,7 +87,7 @@ const ContactForm: React.FC<Props> = ({ isOpen, onClose }) => {
                         <button
                         onClick={onClose}
                         aria-label="Close popup"
-                        className="absolute top-4 right-4 rounded-full bg-transparent hover:bg-red p-1"
+                        className="absolute top-4 right-4 rounded-full bg-red md:bg-transparent md:hover:bg-red p-1"
                         >
                             <Image 
                             src={closeIcon}

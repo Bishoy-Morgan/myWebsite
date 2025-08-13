@@ -27,8 +27,8 @@ const Footer = () => {
 
     return (
         <footer className='w-full flex justify-center py-16'>
-            <div className='w-4/5 flex justify-between'>
-                <div className='w-1/4 py-16 px-2'>
+            <div className='w-95 md:w-4/5 flex justify-between'>
+                <div className='w-1/2 md:w-1/4 py-16 px-2'>
                     <ul className='flex flex-col space-y-8'>
                         <Link 
                             href={`/`} 
@@ -44,12 +44,12 @@ const Footer = () => {
                             {s("work")}
                         </Link>
                     </ul>
-                    <span className='block text-xs mt-20 text-white/50'>
+                    <span className='block para-sm mt-20 text-white/50'>
                         {t("copyRights")}
                     </span>
                 </div>
 
-                <div className='w-1/4 py-16 flex flex-col justify-between'>
+                <div className='w-1/2 md:w-1/4 py-16 flex flex-col justify-between'>
                     <div className='flex items-center justify-start space-x-8'>
                         <Link href={`https://www.linkedin.com/in/bishoy-morgan-ba979a310`} target='_blank' className='navLinks'>
                             <Image 
@@ -70,7 +70,7 @@ const Footer = () => {
                             />
                         </Link>
                     </div>
-                    <div className='px-2 flex justify-between text-xs mt-20 text-white/50'>
+                    <div className='px-2 flex flex-col gap-y-4 md:gap-y-0 md:flex-row justify-between mt-20 text-white/50'>
                         <Link href={`/privacy-policy`} className='para-sm hover:text-white transition-all ease-in-out duration-300'>
                             {t("privacyPolicy")}
                         </Link>

@@ -29,7 +29,7 @@ const CTA = () => {
     }, [inView, controls]);
 
     return (
-        <div className="w-4/5 mx-auto flex flex-col mt-[10%]" ref={ref}>
+        <div className="w-95 md:w-4/5 mx-auto flex flex-col mt-[10%]" ref={ref}>
             {/* Top Red Line */}
             <div className="w-1/2 py-10 border-r-2 border-red mb-16"></div>
 
@@ -40,15 +40,15 @@ const CTA = () => {
                 initial="hidden"
                 animate={controls}
             >
-                <h3 className="text-white max-w-xl text-center">
+                <h3 className="text-white md:max-w-xl text-center">
                     {t("title")}
                 </h3>
-                <p className="main-p mt-10 mb-16 text-center">
+                <p className="main-p mt-10 mb-16 text-center w-3/4 md:w-auto">
                     {t("paragraphA")}
                     <br />
                     {t("paragraphB")}
                 </p>
-                <div className="flex items-center gap-x-4">
+                <div className="flex flex-col items-start md:flex-row md:items-center gap-4">
                     <motion.a
                         href="mailto:bishoy.morgan95@gmail.com?subject=Project%20Inquiry&body=Hi%20Bishoy%2C%20I%27d%20like%20to%20talk%20about%20a%20project!"
                         whileHover={buttonHover}
@@ -72,8 +72,8 @@ const CTA = () => {
             </motion.div>
 
             {/* Bottom Red Lines */}
-            <div className="w-1/4 py-6 border-r-2 border-red mb-16 mt-8"></div>
-            <div className="w-3/4 py-10 border-r-2 border-l-2 border-red mb-4"></div>
+            <div className="w-1/2 md:w-1/4 py-6 border-r-2 border-red mb-16 mt-8"></div>
+            <div className="w-full md:w-3/4 py-6 skew-y-12 md:skew-y-0 md:py-10 border-r-2 border-l-2 border-red mb-4"></div>
             <div className="w-1/2 py-16 border-r-2 border-red"></div>
         </div>
     );

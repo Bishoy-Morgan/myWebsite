@@ -9,12 +9,13 @@ import { useTranslations } from 'next-intl'
 const BehindTheScreen: React.FC = () => {
     const t = useTranslations("BehindTheScreen")
     return (
-        <section className="relative w-4/5 mx-auto flex justify-center py-32">
-            <RedLines lines={['topRight', 'middleRight', 'bottomLeft']} />
+        <section className="relative w-95 md:w-4/5 mx-auto flex justify-center py-32 ">
+            <RedLines className='hidden md:block' lines={['topRight', 'middleRight', 'bottomLeft']} />
+            <RedLines className='md:hidden' lines={['topRight', 'bottomRight', 'bottomLeft', 'middleTopLeft']} />
 
             {/* Content */}
             <motion.div
-                className="w-2/5 flex flex-col items-center justify-center gap-y-8"
+                className="w-full md:w-2/5 flex flex-col items-center justify-center gap-y-8"
                 initial="hidden"
                 whileInView="visible"
                 variants={{
