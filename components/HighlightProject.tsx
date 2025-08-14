@@ -96,8 +96,9 @@ const HighlightProject: React.FC = () => {
                 src={project.desktopImage}
                 alt={`Blogsy Desktop Image`}
                 fill
-                quality={100}
+                quality={80}
                 priority
+                sizes="(max-width: 768px) 100vw, 95vw"
                 className="rounded-lg shadow-2xl object-contain"
               />
             </motion.div>
@@ -115,7 +116,8 @@ const HighlightProject: React.FC = () => {
                 alt={`Blogsy Mobile Image`}
                 width={0.46 * 2556}
                 height={2556}
-                quality={100}
+                quality={80}
+                loading='lazy'
                 className="rounded-[2.5rem] object-cover"
               />
             </motion.div>

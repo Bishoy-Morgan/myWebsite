@@ -1,6 +1,6 @@
 'use client'
 
-// import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 // import Image from 'next/image'
 // import celebrate from '@/public/icons/celebrate.svg'
 import { Suspense } from 'react';
@@ -13,6 +13,7 @@ const Beams = dynamic(() => import("@/public/models/Beams"), { ssr: false });
 
 const HeroSection = () => {
     const t = useTranslations("HeroSection")
+    const [showBeams, setShowBeams] = useState(false);
     // const imgRef = useRef<HTMLDivElement | null>(null)
     // const [circleStart, setCircleStart] = useState<{ x: number; y: number } | null>(null)
     // const [showRedOverlay, setShowRedOverlay] = useState(false)
@@ -143,20 +144,26 @@ const HeroSection = () => {
                         </Button>
                     </a>
                 </motion.div>
-                <div className='black-gradient absolute top-0 left-0 w-full md:relative md:w-1/2 md:px-1 h-full -z-10 md:z-0 opacity-40 md:opacity-100'>
-                    <Suspense>
-                        <Beams
-                        beamWidth={0.3}
-                        beamHeight={25}
-                        beamNumber={25}
-                        lightColor="#FF4533"
-                        speed={4}
-                        noiseIntensity={0.85}
-                        scale={0.2}
-                        rotation={180}
-                        />
-                    </Suspense>
-                </div>
+                <motion.div
+                    className='black-gradient absolute top-0 left-0 w-full md:relative md:w-1/2 md:px-1 h-full -z-10 md:z-0 opacity-40 md:opacity-100'
+                    onViewportEnter={() => setShowBeams(true)}
+                    viewport={{ once: true, margin: '200px' }} // preload slightly before visible
+                >
+                    {showBeams && (
+                        <Suspense>
+                            <Beams
+                                beamWidth={0.3}
+                                beamHeight={25}
+                                beamNumber={25}
+                                lightColor="#FF4533"
+                                speed={4}
+                                noiseIntensity={0.85}
+                                scale={0.2}
+                                rotation={180}
+                            />
+                        </Suspense>
+                    )}
+                </motion.div>
             </section>
         </main>
     )
