@@ -205,6 +205,11 @@ textarea {
     line-height: clamp(12vw, 12.5vw, 12.5vw);
   }
 
+  h4 {
+    font-size: clamp(8vw, 8.5vw, 8.5vw);
+    line-height: clamp(10vw, 10.5vw, 10.5vw);
+  }
+
   .main-p {
     font-size: clamp(4vw, 4.5vw, 5vw);
     line-height: clamp(8vw, 8.3vw, 8.5vw);

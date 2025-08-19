@@ -45,10 +45,10 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ m, index }) => {
   return (
     <motion.div
       ref={ref}
-      className={`absolute flex flex-col max-w-[43%] ${
+      className={`absolute flex flex-col max-w-[calc(44%+1rem)] md:max-w-[calc(43%+1rem] px-2 md:px-0 ${
         m.side === 'left'
           ? 'left-0 items-end text-right '
-          : 'right-0 items-start text-left pr-4'
+          : 'right-0 items-start text-left pr-0 md:pr-4'
       }`}
       style={{ top: `${index * 16}rem` }}
       initial="hidden"
@@ -65,11 +65,15 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ m, index }) => {
         </motion.span>
       </motion.p>
 
-      <motion.h3 className="text-red font-bold tracking-tight my-2" variants={childVariants}>
+      <motion.h3 className="hidden md:block text-red font-bold tracking-tight my-2" variants={childVariants}>
         {m.title}
       </motion.h3>
 
-      <motion.p className="para-sm text-paleWhite" variants={childVariants}>
+      <motion.h4 className="md:hidden text-red font-bold tracking-tight my-2" variants={childVariants}>
+        {m.title}
+      </motion.h4>
+
+      <motion.p className="secondary-p md:para-sm text-paleWhite" variants={childVariants}>
         {m.subtitle}
       </motion.p>
     </motion.div>
@@ -116,9 +120,9 @@ export default function JourneyTimeline() {
   ]
 
   return (
-    <section className="relaive w-4/5 h-[1248px] 2xl:h-[1448px] mx-auto py-20 relative flex justify-center">
+    <section className="relaive w-95 md:w-4/5 h-[1248px] 2xl:h-[1448px] mx-auto py-20 relative flex justify-center">
       <RedLines lines={['bottomRight', 'middleLeft']}/>
-      <div className="relative w-1/2 h-full flex justify-center">
+      <div className="relative w-full md:w-1/2 h-full flex justify-center ">
         {/* Timeline Line */}
         <div className="relative w-[1px] bg-red overflow-hidden">
           <motion.div

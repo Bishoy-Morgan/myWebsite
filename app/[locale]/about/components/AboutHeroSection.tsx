@@ -4,7 +4,7 @@ import RedLines from '@/components/ui/RedLines'
 
 const AboutHeroSection = () => {
     return (
-        <main className='relative w-4/5 mx-auto pt-[10%]'>
+        <main className='relative w-95 md:w-4/5 mx-auto pt-[40%] md:pt-[10%] '>
             <RedLines lines={['middleLeft', 'middleTopRight', 'bottomRight']} />
             {/* Heading */}
             <motion.h1
@@ -18,24 +18,22 @@ const AboutHeroSection = () => {
 
             {/* Intro */}
             <motion.section
-                className="w-full flex items-center justify-center text-center mx-auto mb-16 px-16"
+                className="w-full flex items-center justify-center text-center mx-auto mb-16 px-2 md:px-16"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
             >
                 <div className="text-paleWhite flex flex-col items-center justify-center text-center mx-auto space-y-6">
                     <span 
-                    className="italic w-1/2 " 
-                    style={{ fontSize: 'clamp(1vw, 1.25vw, 1.25vw)' }} 
+                    className="secondary-p italic w-1/2 " 
                     >
                         Looks like you’re curious about who’s running the show behind the screen
                     </span>
-                    <h4 
+                    <h3 
                     className="text-white font-bold tracking-tighter mt-4 mb-6"
-                    style={{ fontSize: 'clamp(1vw, 2vw, 2vw)' }}
                     >
                         let me introduce myself
-                    </h4>
+                    </h3>
                     <p 
                     className="secondary-p leading-relaxed text-paleWhite/70 "                     
                     >

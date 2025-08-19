@@ -12,7 +12,7 @@ export const projectsData = [
         id: '1',
         title: 'Blogsy',
         subTitle:
-            'A fast and modern blogging platform designed for creators, offering seamless content creation, intuitive UI, and powerful SEO features.',
+            'A sleek blogging platform designed to deliver a user experience inspired by Medium.com, with clean layouts, intuitive navigation, and seamless reading.',
         description: 
             `Blogsy is a sleek, user-friendly blogging platform designed with the latest web technologies to deliver fast and seamless performance.
             It offers an intuitive editor, customizable themes, and advanced SEO tools to help content creators reach their audience effectively.
@@ -22,9 +22,21 @@ export const projectsData = [
             Blogsy is built to scale, making it suitable for individual bloggers and professional publishing.`,
         link: 'https://blogsy-ceod.onrender.com',
         image: [blogsyMobile, blogsyDesktop],
-        technologies: ['Flask', 'Python', 'Bootstrap', 'HTML5', 'Sqlite', 'Render'],
-        role: 'Frontend & Backend Development',
-        year: 2023,
+        technologies: [
+            'Flask',
+            'Python',
+            'Bootstrap 5',
+            'HTML5',
+            'Jinja2',
+            'SQLite',
+            'Render',
+            'Google Tag Manager',
+            'Google Analytics',
+            'Trix Editor',
+            'AOS (Animate On Scroll)'
+        ],
+        role: 'Lead Full-Stack Development',
+        year: 2025,
     },
     {
         id: '2',
@@ -40,9 +52,20 @@ export const projectsData = [
             Its modular design allows easy customization and extension over time.`,
         link: 'https://legendalu.com',
         image: [legendMobile, legendDesktop],
-        technologies: ['React.js', 'Gatsby', 'GraphQL', 'Styled Components', 'Contentful CMS'],
-        role: 'Lead Frontend Development',
-        year: 2022,
+        technologies: [
+            'Next.js',
+            'React.js',
+            'Tailwind CSS',
+            'Framer Motion',
+            'Node.js',
+            'MongoDB',
+            'Next-Intl (i18n)',
+            'Google Tag Manager',
+            'Google Analytics',
+            'Vercel'
+        ],
+        role: 'Lead Frontend Developer – Full-Stack Implementation',
+        year: 2024,
     },
     {
         id: '3',
@@ -76,8 +99,15 @@ export const projectsData = [
             Security and data privacy are at the forefront, with strict compliance to industry standards.`,
         link: 'https://spacemortgage.ae',
         image: [spaceMortgageMobile, spaceMortgageDesktop],
-        technologies: ['React.js', 'Next.js', 'Tailwind CSS', 'GraphQL', 'AWS'],
-        role: 'Frontend Development',
+        technologies: [
+            'Next.js',
+            'React.js',
+            'Bootstrap',
+            'Sass (SCSS)',
+            'Node.js',
+            'Vercel'
+        ],
+        role: 'Frontend & Backend Development',
         year: 2024,
     },
 ]

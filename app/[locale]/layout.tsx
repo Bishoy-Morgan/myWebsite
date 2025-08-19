@@ -21,6 +21,7 @@ const ObjectSans = localFont({
       style: 'normal',
     },
   ],
+  display: 'swap'
 });
 
 export const metadata: Metadata = {

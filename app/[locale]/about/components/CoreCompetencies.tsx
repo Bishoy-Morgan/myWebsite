@@ -29,67 +29,91 @@ const CoreCompetencies = () => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
     return (
-        <section className="w-4/5 mx-auto py-20">
+        <section className="w-95 md:w-4/5 mx-auto py-20">
             <motion.h2
-            className="mb-12 w-1/2"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={headingVariants}
+                className="mb-12 w-full md:w-1/2"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={headingVariants}
             >
                 Core Competencies
             </motion.h2>
             <motion.div
-            className="space-y-6"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={listVariants}
+                className="space-y-6"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={listVariants}
             >
                 {skills.map(({ name, level }, i) => (
-                    <div
-                        key={i}
-                        className="cursor-pointer flex justify-between items-center "
-                        onMouseEnter={() => setHoveredIndex(i)}
-                        onMouseLeave={() => setHoveredIndex(null)}
-                    >
-                        {/* Skill name on left */}
-                        <h5 className="secondary-p text-paleWhite px-2 text-left w-1/4 border-l border-red hover:border-l-8 transition-all duration-200 ease-in-out ">
-                            {name}
-                        </h5>
+                    <div key={i}>
+                        {/* Desktop/Tablet Layout - with hover */}
+                        <div
+                            className="hidden md:flex cursor-pointer justify-between items-center"
+                            onMouseEnter={() => setHoveredIndex(i)}
+                            onMouseLeave={() => setHoveredIndex(null)}
+                        >
+                            {/* Skill name on left */}
+                            <h5 className="secondary-p text-paleWhite px-2 text-left w-1/4 border-l border-red hover:border-l-8 transition-all duration-200 ease-in-out">
+                                {name}
+                            </h5>
 
-                        {/* Progress bar + percentage on right, show only on hover */}
-                        <AnimatePresence>
-                            {hoveredIndex === i && (
-                                <motion.div
-                                initial={{ opacity: 0, width: 0 }}
-                                animate={{ opacity: 1, width: '50%' }}
-                                exit={{ opacity: 0, width: 0 }}
-                                transition={{ duration: 0.3 }}
-                                className="flex items-center gap-4 overflow-hidden px-4"
-                                >
+                            {/* Progress bar + percentage on right, show only on hover */}
+                            <AnimatePresence>
+                                {hoveredIndex === i && (
+                                    <motion.div
+                                        initial={{ opacity: 0, width: 0 }}
+                                        animate={{ opacity: 1, width: '50%' }}
+                                        exit={{ opacity: 0, width: 0 }}
+                                        transition={{ duration: 0.3 }}
+                                        className="flex items-center gap-4 overflow-hidden px-4"
+                                    >
+                                        <div className="flex-1 bg-paleWhite/20 h-[2px]">
+                                            <div
+                                                className="bg-red h-[2px]"
+                                                style={{ width: `${level}%` }}
+                                            />
+                                        </div>
+                                        <div className="secondary-p text-paleWhite/70 font-bold tracking-tighter tabular-nums min-w-[2.5rem] text-right">
+                                            {level}%
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </div>
+
+                        {/* Mobile Layout - always show percentage */}
+                        <div className="md:hidden">
+                            <div className="flex flex-col">
+                                <div className="flex items-center">
+                                    <h5 className="main-p md:secondary-p text-paleWhite px-2 text-left border-l border-red">
+                                        {name}
+                                    </h5>
+                                </div>
+                                <div className="mt-2 ml-2 flex items-center gap-4">
                                     <div className="flex-1 bg-paleWhite/20 h-[2px]">
                                         <div
-                                        className="bg-red h-[2px]"
-                                        style={{ width: `${level}%` }}
+                                            className="bg-red h-[2px]"
+                                            style={{ width: `${level}%` }}
                                         />
                                     </div>
                                     <div className="secondary-p text-paleWhite/70 font-bold tracking-tighter tabular-nums min-w-[2.5rem] text-right">
                                         {level}%
                                     </div>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </motion.div>
 
-            <div className="mt-16 text-center ">
+            <div className="mt-16 text-center">
                 <a
-                href="https://cal.com/bishoy-morgan"
-                target="_blank"
-                rel="noopener noreferrer"
-                className='flex justify-center'
+                    href="https://cal.com/bishoy-morgan"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className='flex justify-center'
                 >
                     <Button bgColor="#ff220e">
                         Book a Free Discovery Call
