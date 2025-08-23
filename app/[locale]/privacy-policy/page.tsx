@@ -32,7 +32,7 @@ export default function PrivacyPolicyPage() {
     }, [])
 
     return (
-        <main className="w-4/5 mx-auto pt-[10%] px-2 text-paleWhite">
+        <main className="w-95 md:w-4/5 mx-auto pt-[40%] md:pt-[10%] px-2 text-paleWhite">
             <motion.header
                 className="mb-8"
                 initial="hidden"

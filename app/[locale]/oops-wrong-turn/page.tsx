@@ -59,7 +59,7 @@ export default function NotFound() {
     }
 
     return (
-        <div className="relative w-4/5 mx-auto flex flex-col h-screen justify-center py-20 overflow-hidden">
+        <div className="relative w-95 md:w-4/5 mx-auto flex flex-col h-screen justify-center py-20 overflow-hidden">
             {/* Top Red Line */}
             <div className="w-1/2 py-10 border-r-2 border-red mb-16"></div>
 
@@ -77,9 +77,12 @@ export default function NotFound() {
                     4
                 </h1>
 
-                <h2 className="text-white text-center text-[clamp(1.5rem,4vw,3rem)] mt-6 mb-8">
+                <h2 className="hidden md:block text-white text-center mt-6 mb-8">
                     {message}
                 </h2>
+                <h3 className="md:hidden text-white text-center mt-6 mb-8">
+                    {message}
+                </h3>
 
                 <p className="main-p text-center max-w-xl mb-12">
                     Meanwhile, here&apos;s a button that <i>actually</i> works:
