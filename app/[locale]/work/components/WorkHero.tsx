@@ -36,16 +36,35 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
 }
 
+const mobileContainerVariants = {
+  hidden: { opacity: 0 },
+  visible: { 
+    opacity: 1, 
+    transition: { 
+      staggerChildren: 0.2, 
+      when: "beforeChildren",
+      duration: 0.6,
+      ease: "easeOut",
+    } 
+  },
+}
+
+const mobileItemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+}
+
 const WorkHero = () => {
   const skewAngle = 8
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const cardGap = -230
 
   return (
-    <section className="relative w-4/5 mx-auto pb-24 pt-[10%] flex flex-col items-center">
-      <RedLines lines={['bottomLeft', 'middleTopRight', 'middleTopLeft']} />
+    <section className="relative w-95 md:w-4/5 mx-auto pb-24 pt-[40%] md:pt-[10%] flex flex-col items-center">
+      <RedLines lines={['bottomLeft', 'middleTopRight', 'middleTopLeft']} className='hidden md:block'/>
+      <RedLines lines={['bottomLeft', 'middleTopRight']} className='md:hidden'/>
       <motion.h1
-        className="mb-6 max-w-[50%] text-center"
+        className="mb-6 md:max-w-[50%] text-center px-4 !scale-90 md:!scale-100"
         variants={itemVariants}
         initial="hidden"
         animate="visible"
@@ -54,16 +73,18 @@ const WorkHero = () => {
       </motion.h1>
 
       <motion.p
-        className="main-p max-w-xl text-center text-paleWhite/80 my-4  "
+        className="main-p md:max-w-xl text-center text-paleWhite/80 my-4 px-4"
         variants={itemVariants}
         initial="hidden"
         animate="visible"
       >
-        Dive into my curated collection of projects<br/>each crafted with precision, creativity, and performance at its core.
+        Dive into my curated collection of projects<br className="hidden md:block"/>
+        <span className="md:hidden"> </span>each crafted with precision, creativity, and performance at its core.
       </motion.p>
 
+      {/* Desktop Layout */}
       <motion.div
-        className="relative w-full flex items-center justify-center overflow-visible  px-4 min-h-[70vh]"
+        className="hidden md:flex relative w-full items-center justify-center overflow-visible px-4 min-h-[70vh]"
         style={{ perspective: '1200px' }}
         variants={containerVariants}
         initial="hidden"
@@ -74,7 +95,7 @@ const WorkHero = () => {
           return (
             <div
               key={project.id}
-              className="relative rounded-sm transition-transform duration-500 ease-in-out"
+              className="relative rounded-sm transition-transform duration-500 ease-in-out cursor-pointer"
               style={{
                 width: '28vw', 
                 aspectRatio: '5 / 3.5', 
@@ -98,6 +119,33 @@ const WorkHero = () => {
             </div>
           )
         })}
+      </motion.div>
+
+      {/* Mobile Layout */}
+      <motion.div
+        className="md:hidden w-full px-4 space-y-8 mt-8"
+        variants={mobileContainerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {projects.map((project) => (
+          <motion.div
+            key={project.id}
+            className="relative w-full rounded-lg overflow-hidden shadow-lg"
+            style={{ aspectRatio: '16 / 10' }}
+            variants={mobileItemVariants}
+          >
+            <Image
+              src={project.image}
+              alt={project.name}
+              fill
+              quality={100}
+              className="object-cover object-left-top"
+              draggable={false}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+          </motion.div>
+        ))}
       </motion.div>
     </section>
   )

@@ -1,7 +1,7 @@
 
-import Footer from '@/components/Footer'
-import Work from './components/Work'
 import WorkHero from './components/WorkHero'
+import Work from './components/Work'
+import Footer from '@/components/Footer'
 
 
 export default function WorkPage() {
