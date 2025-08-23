@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Noto_Sans_Arabic } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -22,6 +23,13 @@ const ObjectSans = localFont({
     },
   ],
   display: 'swap'
+});
+
+const notoSansArabic = Noto_Sans_Arabic({
+  subsets: ["arabic"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-notoSansArabic",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -64,7 +72,14 @@ const messages = await getMessages({ locale });
           </>
         )}
       </head>
-      <body className={`${ObjectSans.className} antialiased`}>
+      <body 
+      dir={locale === "ar" ? "rtl" : "ltr"}
+        className={
+          locale === "ar"
+            ? `${notoSansArabic.className}`
+            : `${ObjectSans.className} antialiased`
+        }
+      >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <LinedBackground />
           <Navbar />

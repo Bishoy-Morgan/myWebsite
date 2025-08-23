@@ -1,19 +1,21 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 // import Image from 'next/image'
 // import celebrate from '@/public/icons/celebrate.svg'
 import { Suspense } from 'react';
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import Button from './ui/Button'
 import dynamic from "next/dynamic";
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 const Beams = dynamic(() => import("@/public/models/Beams"), { ssr: false });
 
 const HeroSection = () => {
     const t = useTranslations("HeroSection")
+    const locale = useLocale();
     const [showBeams, setShowBeams] = useState(false);
+    const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
     // const imgRef = useRef<HTMLDivElement | null>(null)
     // const [circleStart, setCircleStart] = useState<{ x: number; y: number } | null>(null)
     // const [showRedOverlay, setShowRedOverlay] = useState(false)
@@ -28,8 +30,33 @@ const HeroSection = () => {
     //     }
     // }
 
+    const messages = [
+        t("welcomeMessage1"),
+        t("welcomeMessage2"), 
+        t("welcomeMessage3")
+    ];
+
+    useEffect(() => {
+        if (showBeams) {
+            const interval = setInterval(() => {
+                setCurrentMessageIndex((prev) => {
+                    if (prev < messages.length - 1) {
+                        return prev + 1;
+                    } else if (prev === messages.length - 1) {
+                        return prev + 1;
+                    } else {
+                        clearInterval(interval);
+                        return prev;
+                    }
+                });
+            }, 5000);
+
+            return () => clearInterval(interval);
+        }
+    }, [showBeams,  messages.length]);
+
     return (
-        <main className='relative w-full h-dvh min-h-screen max-h-[1080px] flex justify-center'>
+        <main className='relative w-full h-dvh min-h-screen max-h-[1080px] flex justify-center overflow-x-hidden'>
             {/* <div className='group'>
                 <div
                     ref={imgRef}
@@ -118,7 +145,7 @@ const HeroSection = () => {
 
             <section className='w-full md:w-4/5 h-full flex items-end md:items-center justify-center md:justify-start'>
                 <motion.div
-                    className="w-95 md:w-1/2 h-4/5 flex flex-col items-start justify-center md:justify-end  "
+                    className={`${locale === 'es' ? 'h-[95%]' : 'h-4/5'} w-95 md:w-1/2  flex flex-col items-start justify-center md:justify-end `}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 1, ease: "easeOut" }}
@@ -147,7 +174,7 @@ const HeroSection = () => {
                 <motion.div
                     className='black-gradient absolute top-0 left-0 w-full md:relative md:w-1/2 md:px-1 h-full -z-10 md:z-0 opacity-40 md:opacity-100'
                     onViewportEnter={() => setShowBeams(true)}
-                    viewport={{ once: true, margin: '200px' }} // preload slightly before visible
+                    viewport={{ once: true, margin: '200px' }}
                 >
                     {showBeams && (
                         <Suspense>
@@ -163,6 +190,25 @@ const HeroSection = () => {
                             />
                         </Suspense>
                     )}
+                    <div className='hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-95 z-10 text-center'>
+                        <AnimatePresence mode="wait">
+                            {showBeams && (
+                                <motion.h2
+                                    key={currentMessageIndex}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -20 }}
+                                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                                    style={{ 
+                                        textShadow: '0 0 10px rgba(0, 0, 0, 1), 2px 2px 4px rgba(0, 0, 0, 1), -2px -2px 4px rgba(0, 0, 0, 0.8)',
+                                        color: 'white', 
+                                    }}
+                                >
+                                    {messages[currentMessageIndex]}
+                                </motion.h2>
+                            )}
+                        </AnimatePresence>
+                    </div>
                 </motion.div>
             </section>
         </main>

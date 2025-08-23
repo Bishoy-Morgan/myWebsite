@@ -7,9 +7,12 @@
     },
     "HeroSection": {
         "title": "Diseño silencioso Resultados ruidosos",
-        "paragraphA": "Soy un desarrollador front-end que cree que el mejor trabajo habla suavemente pero deja una fuerte impresión.",
-        "paragraphB": "Me especializo en sitios web con enfoque en el rendimiento y experiencias multilingües, diseñados para ser rápidos, intuitivos y escalables. No persigo tendencias. Entrego resultados duraderos.",
-        "button": "Reserva una llamada de descubrimiento gratis"
+        "paragraphA": "Soy desarrollador front-end y creo que el mejor trabajo habla en silencio pero deja una fuerte impresión.",
+        "paragraphB": "",
+        "button": "Programar una reunión",
+        "welcomeMessage1": "Hola!",
+        "welcomeMessage2": "¡Tu idioma ya está listo!",
+        "welcomeMessage3": "Disfruta de una experiencia de navegación fluida"
     },
     "BehindTheScreen": {
         "title": "Detrás de la pantalla",

@@ -4,6 +4,7 @@ import React from "react";
 import { motion, HTMLMotionProps } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import defaultArrow from '@/public/icons/long-arrow.svg'
+import { useLocale } from "next-intl";
 
 type ButtonProps = Omit<
     React.ButtonHTMLAttributes<HTMLButtonElement> & HTMLMotionProps<"button">,
@@ -20,12 +21,13 @@ const Button: React.FC<ButtonProps> = ({
     arrowIcon = defaultArrow,
     ...props 
 }) => {
+    const locale = useLocale();
     return (
         <motion.button
         initial="rest"
         whileHover="hover"
         animate="rest"
-        className={`relative overflow-hidden text-white rounded-full ml-[0.5vw] px-[2vw] py-[2vw] md:py-[.8vw] text-button font-semibold flex items-center  ${className}`}
+        className={`relative overflow-hidden text-white rounded-full px-[2vw] py-[2vw] md:py-[.8vw] text-button font-semibold flex items-center ${locale === 'ar' ? 'mr-[0.5vw]' : 'ml-[0.5vw]'} ${className} `}
         {...props}
         >
             {/* Text content stays on top */}
@@ -35,8 +37,14 @@ const Button: React.FC<ButtonProps> = ({
             <motion.span
             className="relative z-10 text-white"
             variants={{
-                rest: { opacity: 0, x: '-6vw' },
-                hover: { opacity: 1, x: '1vw' },
+                rest: { 
+                    opacity: 0, 
+                    x: locale === 'ar' ? '6vw' : '-6vw' 
+                },
+                hover: { 
+                    opacity: 1, 
+                    x: locale === 'ar' ? '-1vw' : '1vw' 
+                },
             }}
             style={{
                 position: 'relative',
@@ -52,6 +60,7 @@ const Button: React.FC<ButtonProps> = ({
                     src={arrowIcon}
                     alt="Arrow"
                     style={{ width: '100%', height: 'auto', display: 'block' }}
+                    className={`${locale === 'ar' ? 'rotate-180' : ''}`}
                 />
             </motion.span>
 
@@ -63,7 +72,8 @@ const Button: React.FC<ButtonProps> = ({
                         height: 'var(--circle-size)',
                         borderRadius: "50%",
                         backgroundColor: bgColor,
-                        left: 0,
+                        left: locale === 'ar' ? 'auto' : '0',
+                        right: locale === 'ar' ? '0' : 'auto',
                         top: "50%",
                         translateY: "-50%",
                         position: "absolute",
@@ -73,7 +83,8 @@ const Button: React.FC<ButtonProps> = ({
                         width: "100%",
                         height: "100%",
                         borderRadius: 0,
-                        right: 0,
+                        left: locale === 'ar' ? 'auto' : '0',
+                        right: locale === 'ar' ? '0' : 'auto',
                         top: 0,
                         translateY: "0%",
                         backgroundColor: bgColor,
