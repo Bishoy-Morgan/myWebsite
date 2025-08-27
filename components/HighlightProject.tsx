@@ -114,11 +114,11 @@ const HighlightProject: React.FC = () => {
               <Image
                 src={project.mobileImage}
                 alt={`Blogsy Mobile Image`}
-                width={0.46 * 2556}
-                height={2556}
+                width={0.45 * 950}
+                height={950}
                 quality={80}
                 loading='lazy'
-                className="rounded-[2.5rem] object-cover"
+                className="rounded-[2.4rem] object-cover"
               />
             </motion.div>
           </motion.div>
