@@ -24,6 +24,14 @@ body {
   font-family: var(--font-notoSansArabic), sans-serif;
 }
 
+.max-w-1920 { 
+  max-width: 1920px; 
+}
+
+.w-95 { 
+  width: 95%; 
+}
+
 h1 {
   font-size: clamp(1.5vw, 6.5vw, 5vw);
   line-height: clamp(2vw, 7.5vw, 6vw);
