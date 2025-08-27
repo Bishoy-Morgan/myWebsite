@@ -22,7 +22,8 @@ const ObjectSans = localFont({
       style: 'normal',
     },
   ],
-  display: 'swap'
+  display: 'swap',
+  preload: true
 });
 
 const notoSansArabic = Noto_Sans_Arabic({

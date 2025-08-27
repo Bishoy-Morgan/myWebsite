@@ -64,9 +64,15 @@ h3 {
 }
 
 .navLinks {
-  @apply pl-2 border-l-2 border-transparent hover:border-red transition-all duration-150 ease-out;
+  padding-left: 0.5rem;
+  border-left: 2px solid transparent;
+  transition: all 150ms ease-out;
   font-size: clamp(0.8vw, 1vw, 1.8vw);
   line-height: clamp(1vw, 1.25vw, 2vw);
+}
+
+.navLinks:hover {
+  border-left-color: #ff4533;
 }
 
 .icon-vw {
@@ -89,12 +95,34 @@ h3 {
 
 input,
 textarea {
-  @apply w-full placeholder:text-[#eeeeee80] placeholder:text-sm placeholder:tracking-wider mt-2 mb-4 bg-transparent border-l focus:border-l-4 border-red px-3 py-2 focus:outline-none focus:ring-1 focus:ring-red transition-all duration-100 ease-in-out;
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: transparent;
+  border-left: 2px solid #ff4533;
+  outline: none;             
+  transition: all 100ms ease-in-out;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(238, 238, 238, 0.5);
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+}
+
+input:focus,
+textarea:focus {
+  border-left-width: 4px;
+  box-shadow: 0 0 0 1px #ff4533;
 }
 
 
   /* Shiny Text Animation */
-
 .shiny-text {
   color: rgba(255, 250, 240, 0.5);
   background: linear-gradient(
