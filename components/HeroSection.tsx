@@ -49,7 +49,7 @@ const HeroSection = () => {
                         return prev;
                     }
                 });
-            }, 5000);
+            }, 3000);
 
             return () => clearInterval(interval);
         }
@@ -193,19 +193,16 @@ const HeroSection = () => {
                     <div className='hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-95 z-10 text-center'>
                         <AnimatePresence mode="wait">
                             {showBeams && (
-                                <motion.h2
+                                <motion.h3
                                     key={currentMessageIndex}
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -20 }}
                                     transition={{ duration: 0.6, ease: "easeInOut" }}
-                                    style={{ 
-                                        textShadow: '0 0 10px rgba(0, 0, 0, 1), 2px 2px 4px rgba(0, 0, 0, 1), -2px -2px 4px rgba(0, 0, 0, 0.8)',
-                                        color: 'white', 
-                                    }}
+
                                 >
                                     {messages[currentMessageIndex]}
-                                </motion.h2>
+                                </motion.h3>
                             )}
                         </AnimatePresence>
                     </div>
