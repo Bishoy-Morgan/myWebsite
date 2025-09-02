@@ -14,10 +14,6 @@
   See my work in action — not just in code.<br/>
 </p>
 
-<p align="center">
-  <img src="./public/preview.gif" width="800" alt="Portfolio Preview" />
-</p>
-
 ---
 
 <p align="center">
