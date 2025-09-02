@@ -12,7 +12,6 @@
 <p align="center">
   <b>Fast. Beautiful. Alive.</b><br/>
   See my work in action — not just in code.<br/>
-  <a href="https://bishoymorgan.com">bishoymorgan.com</a>
 </p>
 
 <p align="center">
