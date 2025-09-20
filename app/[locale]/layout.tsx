@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Noto_Sans_Arabic } from "next/font/google";
-import Script from "next/script";
+// import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import LinedBackground from "@/components/ui/LinedBackground";
@@ -55,7 +55,7 @@ const messages = await getMessages({ locale });
 
   return (
     <html lang={locale}>
-      <head>
+{/*       <head>
         {process.env.NEXT_PUBLIC_GA_ID && (
           <>
             <Script
@@ -72,7 +72,7 @@ const messages = await getMessages({ locale });
             </Script>
           </>
         )}
-      </head>
+      </head> */}
       <body 
       dir={locale === "ar" ? "rtl" : "ltr"}
         className={
